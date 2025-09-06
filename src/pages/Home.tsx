@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Product } from "../interface/Products";
 import { getAllProducts } from "../services/ProductService";
+import PortalLayout from "../layout/PortalLayout";
 
 const Home = () => {
   const [products, setProducts] = useState<Product[] | undefined>([]);
@@ -12,7 +13,9 @@ const Home = () => {
 
 
   return (
+    
     <div>
+      <PortalLayout children={undefined} />
       <h1>Esta es la pagina principal</h1>
         {(products ?? []).map((p)=>(
             <div key={p.id}>

@@ -1,14 +1,40 @@
 import { useState } from "react";
 import { loginPost } from "../services/LoginService";
+import { useAuth } from "../context/AuthProvider";
+import { Navigate } from "react-router-dom";
+import type { AuthResponse } from "../interface/Auth";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+      const [errorResponse, setErrorResponse] = useState("");
+
+  const auth = useAuth();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await loginPost(username, password);
+
+  try {
+    const userData: AuthResponse | undefined = await loginPost(username, password);
+
+    if (userData) {
+      setErrorResponse("");
+      auth.saveUser(userData);
+      <Navigate to="/home" />
+    } else {
+      setErrorResponse("No se pudo iniciar sesión");
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      setErrorResponse(error.message);
+    } else {
+      setErrorResponse("Error desconocido");
+    }
+  }
   };
+  if (auth.isAuthenticated) {
+        return <Navigate to="/home" />; 
+    }
 
   return (
     <form onSubmit={handleSubmit}>

@@ -3,6 +3,4 @@ export interface User {
   firstName: string;
   lastName: string;
   username: string;
-  accessToken: string;
-  refreshToken: string;
 }
