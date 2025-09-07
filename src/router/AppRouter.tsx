@@ -3,7 +3,7 @@ import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Summary from "../pages/Summary";
 import ProtectedRoute from "./ProtectedRoute";
-import Me from "../pages/me";
+import Me from "../pages/Me";
 
 const router = createBrowserRouter([
   {

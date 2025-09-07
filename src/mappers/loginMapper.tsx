@@ -1,5 +1,5 @@
-import type { AccessTokenResponse, AuthResponse } from "../interface/Auth";
-import type { User } from "../interface/User";
+import type { AccessTokenResponse, AuthResponse } from "../model/Auth";
+import type { User } from "../model/User";
 
 export const loginMapper = (login: any): AuthResponse => {
   const user: User = {

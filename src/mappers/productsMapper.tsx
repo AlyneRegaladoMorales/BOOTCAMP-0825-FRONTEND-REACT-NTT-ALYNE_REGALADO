@@ -1,4 +1,4 @@
-import type { Product } from "../interface/Products";
+import type { Product } from "../model/Products";
 
 export const getAllProductsMapper = (products: any[]): Product[] => {
   return products.map((p) => ({

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Product } from "../interface/Products";
+import type { Product } from "../model/Products";
 import { getAllProducts } from "../services/ProductService";
 import PortalLayout from "../layout/PortalLayout";
 

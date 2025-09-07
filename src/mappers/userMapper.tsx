@@ -1,4 +1,4 @@
-import type { User } from "../interface/User";
+import type { User } from "../model/User";
 
 export const getUserInfoMapper = (accessToken: any): User => {
   return {

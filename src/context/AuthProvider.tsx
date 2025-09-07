@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import type { User } from "../interface/User";
+import type { User } from "../model/User";
 import { getUserInfo } from "../services/UserService";
 import { requestNewAccessToken } from "../services/LoginService";
-import type { AuthResponse } from "../interface/Auth";
+import type { AuthResponse } from "../model/Auth";
 
 interface AuthProviderProps {
   children: React.ReactNode;

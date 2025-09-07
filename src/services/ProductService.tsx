@@ -1,4 +1,4 @@
-import type { Product } from "../interface/Products";
+import type { Product } from "../model/Products";
 import { getAllProductsMapper } from "../mappers/productsMapper";
 import { API_URL } from "../utils/Constans";
 
