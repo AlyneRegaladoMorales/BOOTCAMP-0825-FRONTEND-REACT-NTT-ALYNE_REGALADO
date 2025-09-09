@@ -1,3 +1,4 @@
+
 interface ModalProps {
   isOpen: boolean;
   message?: string; 

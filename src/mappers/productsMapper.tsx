@@ -9,5 +9,7 @@ export const getAllProductsMapper = (products: any[]): Product[] => {
     discountPercentage: p.discountPercentage,
     rating: p.rating,
     thumbnail: p.thumbnail,
+    category: p.category
+    
   }));
 };
