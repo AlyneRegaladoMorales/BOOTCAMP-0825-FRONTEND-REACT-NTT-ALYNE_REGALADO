@@ -7,4 +7,5 @@ export interface Product {
   rating: number;
   thumbnail: string;
   category: string;
+  stock: number
 }

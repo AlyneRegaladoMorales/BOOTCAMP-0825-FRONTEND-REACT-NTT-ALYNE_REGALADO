@@ -8,6 +8,8 @@ import PortalLayout from "../layout/PortalLayout";
 import { getCategories } from "../services/CategoryService";
 import type { Category } from "../model/Category";
 import { usePagination } from "../utils/Pagination";
+import { useCart } from "../context/CartContext";
+import Modal from "../components/Modal";
 
 const searchProducts = (products: Product[], query: string): Product[] => {
   const queryLower = query.toLowerCase();
@@ -20,6 +22,13 @@ const Home = () => {
   const [cat, setCat] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+
+  const { dispatch } = useCart();
+
   const filteredProducts = useMemo(() => {
     if (searchQuery.trim().length < 3) {
       return { list: products, showWarning: searchQuery.length > 0 };
@@ -27,16 +36,16 @@ const Home = () => {
     return { list: searchProducts(products, searchQuery), showWarning: false };
   }, [products, searchQuery]);
 
-  const { page, totalPages, pageItems, nextPage, prevPage} =
-    usePagination(filteredProducts.list, 12);
+  const { page, totalPages, pageItems, nextPage, prevPage } = usePagination(
+    filteredProducts.list,
+    12
+  );
 
   useEffect(() => {
     getCategories().then((cats) => {
       if (cats) setCategories(cats);
     });
   }, []);
-
-
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -85,6 +94,10 @@ const Home = () => {
           <h2>{p.title}</h2>
           <p>{p.description}</p>
           <img src={p.thumbnail} alt={p.title} width={100} />
+
+          <button onClick={() => dispatch({ type: "ADD_ITEM", payload: p })}>
+            Agregar al carrito
+          </button>
         </div>
       ))}
 
@@ -99,7 +112,13 @@ const Home = () => {
           Siguiente
         </button>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        message={modalMessage}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
+
   );
 };
 
