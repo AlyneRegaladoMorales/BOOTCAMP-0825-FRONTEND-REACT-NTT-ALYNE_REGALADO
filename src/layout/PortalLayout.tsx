@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar/Navbar";
 import type React from "react";
 
 const PortalLayout:React.FC<React.PropsWithChildren> = ({ children }) : JSX.Element => {

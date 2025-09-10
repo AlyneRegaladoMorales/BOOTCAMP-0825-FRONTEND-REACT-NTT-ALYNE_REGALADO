@@ -6,5 +6,6 @@ export const getUserInfoMapper = (accessToken: any): User => {
     firstName: accessToken.firstName,
     lastName: accessToken.lastName,
     username: accessToken.username,
+    image: accessToken.image,
   };
 };
