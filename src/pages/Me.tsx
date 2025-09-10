@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import type { User } from "../model/User";
 import { getUserInfo } from "../services/UserService";
-import PortalLayout from "../layout/PortalLayout";
+import PortalLayout from "../layout/PortalLayout/PortalLayout";
 import { Navigate } from "react-router-dom";
 
 const Me = () => {

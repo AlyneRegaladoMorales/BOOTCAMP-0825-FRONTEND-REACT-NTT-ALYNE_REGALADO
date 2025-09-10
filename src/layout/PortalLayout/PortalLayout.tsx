@@ -1,6 +1,7 @@
 import type { JSX } from "react";
-import Navbar from "../components/NavBar/Navbar";
+import Navbar from "../../components/NavBar/Navbar";
 import type React from "react";
+import { MainContent } from "./PortalLayout.styled";
 
 const PortalLayout:React.FC<React.PropsWithChildren> = ({ children }) : JSX.Element => {
   return (
@@ -8,7 +9,9 @@ const PortalLayout:React.FC<React.PropsWithChildren> = ({ children }) : JSX.Elem
       <header>
         <Navbar />
       </header>
-      <main>{children}</main>
+      <main>
+        <MainContent>{children}</MainContent>
+      </main>
     </>
   );
 };
