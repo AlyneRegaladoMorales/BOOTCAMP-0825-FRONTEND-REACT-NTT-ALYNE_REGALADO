@@ -9,9 +9,7 @@ const PortalLayout:React.FC<React.PropsWithChildren> = ({ children }) : JSX.Elem
       <header>
         <Navbar />
       </header>
-      <main>
-        <MainContent>{children}</MainContent>
-      </main>
+      <MainContent>{children}</MainContent>
     </>
   );
 };

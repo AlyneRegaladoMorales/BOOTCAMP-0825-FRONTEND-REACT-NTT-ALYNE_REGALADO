@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { Form, useNavigate } from "react-router-dom";
-import Modal from "../../components/Modal";
+import Modal from "../../components/Modal/Modal";
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
 import { Button, Container, Input, Section, Table, Title, TotalBox } from "./Summary.styled";
 
@@ -63,7 +63,7 @@ const Summary = () => {
 
     console.log("Datos enviados:", { ...form, items: state.items, total });
 
-    setModalMessage("Pedido registrado con éxito ✅");
+    setModalMessage("Pedido registrado con éxito");
     setIsModalOpen(true);
   };
 

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { loginPost } from "../services/LoginService";
-import { useAuth } from "../context/AuthProvider";
+import { loginPost } from "../../services/LoginService";
+import { useAuth } from "../../context/AuthProvider";
 import { Navigate } from "react-router-dom";
-import type { AuthResponse } from "../model/Auth";
-import Modal from "../components/Modal";
+import type { AuthResponse } from "../../model/Auth";
+import Modal from "../../components/Modal/Modal";
+import { ForgotLink, InputGroup, LoginBox, LoginContainer, SubmitButton, Title } from "./Login.styled";
 
 const Login = () => {
   const [username, setUsername] = useState<string>("");
@@ -57,20 +58,28 @@ const Login = () => {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h1>Iniciar Sesion</h1>
+    <LoginContainer>
+      <LoginBox>
+        <form onSubmit={handleSubmit}>
+        <Title>Iniciar Sesion</Title>
+        <InputGroup>
         <label>Usuario:</label>
         <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value.replace(/\s/g, ""))}/>
+        </InputGroup>
+        <InputGroup>
         <label>Contraseña:</label>
         <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value.replace(/\s/g, ""))}/>
-        <button type="submit">iniciar sesion</button>
+        
+        </InputGroup>
+        <SubmitButton  type="submit">iniciar sesion</SubmitButton >
       </form>
-      <p>
-        <a href="#" onClick={() => setShowForgotModal(true)}>
+      
+        <ForgotLink  href="#" onClick={() => setShowForgotModal(true)}>
           Olvidé Contraseña
-        </a>
-      </p>
+        </ForgotLink >
+      
+      </LoginBox>
+      
       <Modal isOpen={!!errorResponse} onClose={() => setErrorResponse("")} message={errorResponse}/>
 
       <Modal isOpen={showForgotModal} onClose={() => setShowForgotModal(false)}>
@@ -86,7 +95,7 @@ const Login = () => {
         message="Correo enviado correctamente"
         onClose={() => setShowForgotConfirm(false)}
       />
-    </>
+    </LoginContainer>
   );
 };
 

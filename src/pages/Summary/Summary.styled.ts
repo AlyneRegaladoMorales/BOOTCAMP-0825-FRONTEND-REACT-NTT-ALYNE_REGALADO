@@ -32,13 +32,38 @@ export const Table = styled.table`
   border-collapse: collapse;
   margin-bottom: 1.5rem;
 
+  th, td {
+    border: 1px solid #eee;
+    padding: 0.8rem;
+    text-align: left;
+  }
+
+  th {
+    background: #f9f9f9;
+    font-weight: 600;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
   img {
     border-radius: 8px;
   }
+
+  button {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
 `;
-
-
-
 
 export const TotalBox = styled.div`
   font-size: 1.2rem;
@@ -47,22 +72,7 @@ export const TotalBox = styled.div`
   text-align: right;
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 
-  label {
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-  }
-
-  p {
-    color: red;
-    font-size: 0.85rem;
-    margin: 0;
-  }
-`;
 export const Input = styled.input`
   width: 100%;
   padding: 0.8rem;

@@ -8,7 +8,7 @@ import PortalLayout from "../../layout/PortalLayout/PortalLayout";
 import { getCategories } from "../../services/CategoryService";
 import type { Category } from "../../model/Category";
 import { usePagination } from "../../utils/Pagination";
-import Modal from "../../components/Modal";
+import Modal from "../../components/Modal/Modal";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import CategorySidebar from "../../components/CategorySidebar/CategorySidebar";
 import {
