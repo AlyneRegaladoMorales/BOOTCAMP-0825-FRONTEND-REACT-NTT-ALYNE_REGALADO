@@ -1,6 +1,6 @@
-import type { User } from "../model/User";
+import type { User, UserResponse } from "../model/User";
 
-export const getUserInfoMapper = (accessToken: any): User => {
+export const getUserInfoMapper = (accessToken: UserResponse): User => {
   return {
     _id: accessToken.id,
     firstName: accessToken.firstName,

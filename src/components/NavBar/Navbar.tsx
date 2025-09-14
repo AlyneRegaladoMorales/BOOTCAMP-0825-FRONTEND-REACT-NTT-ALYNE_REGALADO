@@ -28,7 +28,8 @@ const Navbar = () => {
 
   const totalItems = state.items.reduce((acc, item) => acc + item.quantity, 0);
 
-  return (<NavbarContainer>
+  return (
+  <NavbarContainer>
       <TopBanner>
         <p>Bienvenido a DemoStore – Explora todos los productos disponibles</p>
       </TopBanner>
@@ -50,7 +51,7 @@ const Navbar = () => {
           <li>
             <Link to="/me">
               <Avatar
-                src={auth.getUser()?.image || "/default-avatar.png"}
+                src={auth.getUser()?.image || "assets/img/default-avatar.png"}
                 alt={auth.getUser()?.firstName ?? "avatar"}
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/default-avatar.png";

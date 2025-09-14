@@ -1,6 +1,6 @@
-import type { Product } from "../model/Products";
+import type { Product, ProductResponse } from "../model/Products";
 
-export const getAllProductsMapper = (products: any[]): Product[] => {
+export const getAllProductsMapper = (products: ProductResponse[]): Product[] => {
   return products.map((p) => ({
     id: p.id,
     title: p.title,
@@ -11,8 +11,5 @@ export const getAllProductsMapper = (products: any[]): Product[] => {
     thumbnail: p.thumbnail,
     category: p.category,
     stock: p.stock
-
-
-    
   }));
 };

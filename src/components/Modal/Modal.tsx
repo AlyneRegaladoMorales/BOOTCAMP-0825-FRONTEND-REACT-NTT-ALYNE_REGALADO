@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { ModalContainer,  Overlay, PrimaryButton } from "./Modal.styled";
 
 interface ModalProps {
@@ -7,7 +8,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, message, children, onClose }) => {
+const Modal: FC<ModalProps> = ({ isOpen, message, children, onClose }) => {
   if (!isOpen) return null;
 
   return (

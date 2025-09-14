@@ -1,7 +1,7 @@
-import type { User } from "./User";
+import type { User, UserResponse } from "./User";
 
 export interface AuthResponse {
-    user: User;
+    id: number
     accessToken: string;
     refreshToken: string;
 }
@@ -9,8 +9,9 @@ export interface AuthResponse {
 export interface AuthResponseError {
     error: string;
 }
-/*https://dummyjson.com/auth/refresh*/
-export interface AccessTokenResponse {
+
+export interface Auth {
+    id: number
     accessToken: string;
     refreshToken: string;
 }

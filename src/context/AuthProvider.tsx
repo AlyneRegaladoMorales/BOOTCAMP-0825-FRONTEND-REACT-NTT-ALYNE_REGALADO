@@ -1,24 +1,20 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, type FC, type PropsWithChildren } from "react";
 import type { User } from "../model/User";
 import { getUserInfo } from "../services/UserService";
 import { requestNewAccessToken } from "../services/LoginService";
-import type { AuthResponse } from "../model/Auth";
+import type { Auth } from "../model/Auth";
 
-interface AuthProviderProps {
-  children: React.ReactNode;
-}
+
 const AuthContext = createContext({
   isAuthenticated: false,
   getAccessToken: (): string => "",
   getRefreshToken: (): string | null => null,
   getUser: () => ({} as User | undefined),
-  saveUser: (userData: AuthResponse) => {},
-
-    // signOut: () => {},
-    signOut: () => {}, 
-    
+  saveUser: (userData: Auth) => { },
+  signOut: () => { },
 });
-export const AuthProvider = ({ children }: AuthProviderProps) => {
+
+export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false); //valor de acceso por defecto
   const [accessToken, setAccessToken] = useState<string>("");
   const [user, setUser] = useState<User>();
@@ -29,35 +25,32 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     checkAuth();
   }, []);
 
+  const checkAuth = async () => {
+    let token = accessToken ? accessToken : getRefreshToken();
 
-  const checkAuth = async (): Promise<void> => {
-    if (accessToken) {
-      const user = await getUserInfo(accessToken);
-      if (user) {
-        saveSesionInfo(user, accessToken, getRefreshToken()!);
-        setIsLoading(false);
-        return;
-      }
-    } else {
-      const token = getRefreshToken();
-      if (token) {
-        const newAccesToken = await requestNewAccessToken(token);
-        if (newAccesToken) {
-          const user = await getUserInfo(newAccesToken);
-          if (user) {
-            saveSesionInfo(user, newAccesToken, token);
-            setIsLoading(false);
-            return;
-          }
-        }
+    if (!token) {
+      setIsLoading(false);
+      return;
+    }
+
+    if (!accessToken) {
+      token = (await requestNewAccessToken(token)) ?? "";
+    }
+    
+    if (token) {
+      const currentUser = await getUserInfo(token);
+      if (currentUser) {
+        saveSesionInfo(currentUser, token, getRefreshToken() ?? "");
       }
     }
+
     setIsLoading(false);
   };
 
-  const getAccessToken = ():string => {
+  const getAccessToken = (): string => {
     return accessToken;
   };
+
   const getRefreshToken = (): string | null => {
     const tokenData = localStorage.getItem("refreshToken");
     if (tokenData) {
@@ -66,21 +59,19 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
     return null;
   };
+
   const getUser = () => {
     return user;
   };
 
-  const saveUser = (userData: AuthResponse): void=>{
-    saveSesionInfo(userData.user, userData.accessToken, userData.refreshToken);
-  }
+  const saveUser = async (userData: Auth): Promise<void> => {
+    const userInfo = await getUserInfo(userData.accessToken);
+    if (userInfo) {
+      saveSesionInfo(userInfo, userData.accessToken, userData.refreshToken);
+    }
+  };
 
- 
-
-  const saveSesionInfo = (
-    userInfo: User,
-    accessToken: string,
-    refreshToken: string
-  ): void => {
+  const saveSesionInfo = (userInfo: User, accessToken: string, refreshToken: string): void => {
     setAccessToken(accessToken);
     localStorage.setItem("refreshToken", JSON.stringify({ refreshToken }));
     setIsAuthenticated(true);
@@ -94,7 +85,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     localStorage.removeItem("refreshToken");
   };
 
-  
+
   return (
     <AuthContext.Provider
       value={{

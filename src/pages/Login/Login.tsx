@@ -2,7 +2,7 @@ import { useState } from "react";
 import { loginPost } from "../../services/LoginService";
 import { useAuth } from "../../context/AuthProvider";
 import { Navigate } from "react-router-dom";
-import type { AuthResponse } from "../../model/Auth";
+import type { Auth } from "../../model/Auth";
 import Modal from "../../components/Modal/Modal";
 import { ForgotLink, InputGroup, LoginBox, LoginContainer, SubmitButton, Title } from "./Login.styled";
 
@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const userData: AuthResponse | undefined = await loginPost(
+      const userData: Auth | undefined = await loginPost(
         username,
         password
       );
