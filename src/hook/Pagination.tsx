@@ -1,6 +1,7 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
-export function usePagination<T>(items: T[], itemsPerPage: number = 10) {
+export const  usePagination = <T,>(items: T[], itemsPerPage: number = 10) => {
+  
   const [page, setPage] = useState(1);
 
   const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -17,12 +18,16 @@ export function usePagination<T>(items: T[], itemsPerPage: number = 10) {
     if (n >= 1 && n <= totalPages) setPage(n);
   };
 
+  useEffect(() => {
+    setPage(1);
+  }, [items]);
+
   return {
     page,
     totalPages,
     pageItems,
-    setPage: goToPage,
     nextPage,
     prevPage,
+    goToPage
   };
 }

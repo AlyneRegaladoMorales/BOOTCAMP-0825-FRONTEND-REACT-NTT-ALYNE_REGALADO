@@ -1,9 +1,8 @@
-import type { FC, JSX, PropsWithChildren } from "react";
+import type { FC, PropsWithChildren } from "react";
 import Navbar from "../../components/NavBar/Navbar";
-import type React from "react";
 import { MainContent } from "./PortalLayout.styled";
 
-const PortalLayout:FC<PropsWithChildren> = ({ children }) : JSX.Element => {
+const PortalLayout:FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <header>

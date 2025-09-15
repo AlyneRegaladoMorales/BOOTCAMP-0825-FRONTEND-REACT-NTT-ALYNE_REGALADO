@@ -7,7 +7,6 @@ import {
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
 import { getCategories } from "../../services/CategoryService";
 import type { Category } from "../../model/Category";
-import { usePagination } from "../../utils/Pagination";
 import Modal from "../../components/Modal/Modal";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import CategorySidebar from "../../components/CategorySidebar/CategorySidebar";
@@ -19,6 +18,7 @@ import {
   SearchBar,
 } from "./Home.styled";
 import Pagination from "../../components/Pagination/Pagination";
+import { usePagination } from "../../hook/Pagination";
 
 const searchProducts = (products: Product[], query: string): Product[] => {
   const queryLower = query.toLowerCase();
@@ -41,9 +41,9 @@ const Home = () => {
     return { list: searchProducts(products, searchQuery), showWarning: false };
   }, [products, searchQuery]);
 
-  const { page, totalPages, pageItems, nextPage, prevPage } = usePagination(
+  const { page, totalPages, pageItems, nextPage, prevPage, goToPage } = usePagination(
     filteredProducts.list,
-    12
+    10
   );
 
   useEffect(() => {
@@ -103,12 +103,10 @@ const Home = () => {
             <Pagination
               page={page}
               totalPages={totalPages}
-              onPageChange={(num) => {
-                if (num > 0 && num <= totalPages) {
-                  if (num > page) nextPage();
-                  else if (num < page) prevPage();
-                }
-              }}
+              onPageChange={goToPage}
+              onNext = {nextPage}
+              onPrev = {prevPage}
+
             />
           </Content>
         </Container>

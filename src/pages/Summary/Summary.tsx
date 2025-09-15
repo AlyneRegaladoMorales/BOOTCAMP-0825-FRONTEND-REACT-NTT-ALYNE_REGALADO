@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { Form, useNavigate } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
-import { Button, Container, Input, Section, Table, Title, TotalBox } from "./Summary.styled";
+import { Button, Container, Input, Section, Select, Table, Title, TotalBox } from "./Summary.styled";
+import { getDistricService, type Distric } from "../../services/DistricService";
 
 const Summary = () => {
   const { state, dispatch } = useCart();
   const navigate = useNavigate();
+  const [distric, setDistric] = useState<Distric[]>([]);
+
+  useEffect(() => {
+    getDistricService().then((districs) => {
+      if (districs) setDistric(districs)
+    })
+  }, []);
 
   const [form, setForm] = useState({
     nombres: "",
@@ -192,14 +200,18 @@ const Summary = () => {
 
           <div>
             <label>Distrito:</label>
-            <Input
-              type="text"
+            <Select
               value={form.distrito}
               onChange={(e) => setForm({ ...form, distrito: e.target.value })}
-            />
-            {errors.distrito && (
-              <p style={{ color: "red" }}>{errors.distrito}</p>
-            )}
+            >
+              <option value="">Seleccione un distrito</option>
+              {distric.map((d) => (
+                <option key={d.id} value={d.name}>
+                  {d.name}
+                </option>
+              ))}
+            </Select>
+            {errors.distrito && <p style={{ color: "red" }}>{errors.distrito}</p>}
           </div>
 
           <div>

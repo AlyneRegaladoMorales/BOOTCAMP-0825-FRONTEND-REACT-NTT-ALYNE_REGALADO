@@ -6,22 +6,23 @@ export const PaginationContainer = styled.div`
   align-items: center;
   margin: 30px 0;
   gap: 12px;
-
+  
   span {
     font-weight: 500;
   }
 `;
 
-export const PageButton = styled.button`
+export const PageButton = styled.button<{ $active?: boolean }>`
   padding: 6px 12px;
   border: 1px solid #ddd;
-  background: #f9f9f9;
-  color: #333;
-  cursor: pointer;
   border-radius: 4px;
+  cursor: pointer;
+
+  background: ${({ $active }) => ($active ? "#e63946" : "#f9f9f9")};
+  color: ${({ $active }) => ($active ? "white" : "#333")};
 
   &:hover {
-    background: #eee;
+    background: ${({ $active }) => ($active ? "#e63946" : "#eee")};
   }
 
   &:disabled {

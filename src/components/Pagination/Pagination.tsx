@@ -4,25 +4,34 @@ interface Props {
   page: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  onNext:() => void;
+  onPrev:() => void;
+  
+
 }
 
-const Pagination = ({ page, totalPages, onPageChange }: Props) => {
+const Pagination = ({ page, totalPages, onPageChange, onNext, onPrev }: Props) => {
+const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
   return (
     <PaginationContainer>
       <PageButton
-        onClick={() => onPageChange(page - 1)}
-        disabled={page === 1}
-      >
+        onClick={onPrev}
+      > 
         ‹ Anterior
       </PageButton>
 
-      <span>
-        Página {page} de {totalPages}
-      </span>
+      {pages.map((num) => (
+        <PageButton
+          key={num}
+          onClick={() => onPageChange(num)} 
+          $active={num === page}
+        >
+          {num}
+        </PageButton>
+      ))}
 
       <PageButton
-        onClick={() => onPageChange(page + 1)}
-        disabled={page === totalPages}
+        onClick={ onNext}
       >
         Siguiente ›
       </PageButton>

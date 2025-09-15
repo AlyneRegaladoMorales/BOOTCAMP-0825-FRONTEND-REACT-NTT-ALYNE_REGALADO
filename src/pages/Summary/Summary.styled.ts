@@ -106,3 +106,22 @@ export const Button = styled.button`
     cursor: not-allowed;
   }
 `;
+export const Select = styled.select`
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  transition: 0.3s;
+  font-size: 1rem;
+
+  &:focus {
+    border-color: #e63946;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
+  }
+
+  option {
+    padding: 0.5rem;
+  }
+`;
