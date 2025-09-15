@@ -18,13 +18,6 @@ export const SearchBar = styled.div`
   align-items: center;
   margin-bottom: 20px;
 
-  input {
-    flex: 1;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-  }
-
   button {
     margin-left: 8px;
     padding: 6px 12px;

@@ -4,7 +4,8 @@ import { useAuth } from "../../context/AuthProvider";
 import { Navigate } from "react-router-dom";
 import type { Auth } from "../../model/Auth";
 import Modal from "../../components/Modal/Modal";
-import { ForgotLink, InputGroup, LoginBox, LoginContainer, SubmitButton, Title } from "./Login.styled";
+import { ForgotLink, InputGroup, LoginBox, LoginContainer, Title } from "./Login.styled";
+import { Button, Input } from "../../layout/styles/GlobalStyle";
 
 const Login = () => {
   const [username, setUsername] = useState<string>("");
@@ -48,6 +49,8 @@ const Login = () => {
       setForgotMessage("Ingrese un correo válido");
       return;
     }
+    setForgotEmail("");
+    
     setForgotMessage("");
     setShowForgotModal(false);
     setShowForgotConfirm(true);
@@ -56,6 +59,11 @@ const Login = () => {
   if (auth.isAuthenticated) {
     return <Navigate to="/home" />;
   }
+  const handleCloseForgotModal = () => {
+  setShowForgotModal(false);
+  setForgotEmail("");   // limpia input
+  setForgotMessage(""); // limpia errores
+};
 
   return (
     <LoginContainer>
@@ -64,14 +72,14 @@ const Login = () => {
         <Title>Iniciar Sesion</Title>
         <InputGroup>
         <label>Usuario:</label>
-        <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value.replace(/\s/g, ""))}/>
+        <Input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value.replace(/\s/g, ""))}/>
         </InputGroup>
         <InputGroup>
         <label>Contraseña:</label>
-        <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value.replace(/\s/g, ""))}/>
+        <Input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value.replace(/\s/g, ""))}/>
         
         </InputGroup>
-        <SubmitButton  type="submit">iniciar sesion</SubmitButton >
+        <Button variant="red" type="submit">iniciar sesion</Button >
       </form>
       
         <ForgotLink  href="#" onClick={() => setShowForgotModal(true)}>
@@ -82,11 +90,11 @@ const Login = () => {
       
       <Modal isOpen={!!errorResponse} onClose={() => setErrorResponse("")} message={errorResponse}/>
 
-      <Modal isOpen={showForgotModal} onClose={() => setShowForgotModal(false)}>
+      <Modal isOpen={showForgotModal} onClose={handleCloseForgotModal}>
         <form onSubmit={handleForgotSubmit}>
-          <input type="email" placeholder="Correo electrónico" value={forgotEmail} onChange={(e) => setForgotEmail(e.target.value)} />
+          <Input type="email" placeholder="Correo electrónico" value={forgotEmail} onChange={(e) => setForgotEmail(e.target.value)} />
           {forgotMessage && <p style={{ color: "black" }}>{forgotMessage}</p>}
-          <button type="submit">Enviar</button>
+          <Button variant="black" type="submit">Enviar</Button>
         </form>
       </Modal>
 

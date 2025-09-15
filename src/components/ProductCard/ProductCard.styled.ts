@@ -69,18 +69,3 @@ export const Stars = styled.div`
   margin-bottom: 10px;
 `;
 
-export const AddButton = styled.button`
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: auto;
-
-  &:hover {
-    background: #333;
-  }
-`;

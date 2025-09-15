@@ -3,8 +3,10 @@ import { useCart } from "../../context/CartContext";
 import { Form, useNavigate } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
-import { Button, Container, Input, Section, Select, Table, Title, TotalBox } from "./Summary.styled";
-import { getDistricService, type Distric } from "../../services/DistricService";
+import { Container, Section, Select, Table, Title, TotalBox } from "./Summary.styled";
+import type { Distric } from "../../model/Distric";
+import { getDistricService } from "../../services/DistricService";
+import { Button, Input } from "../../layout/styles/GlobalStyle";
 
 const Summary = () => {
   const { state, dispatch } = useCart();
@@ -77,7 +79,6 @@ const Summary = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-
     dispatch({ type: "CLEAR_CART" });
     setForm({
       nombres: "",
@@ -151,6 +152,11 @@ const Summary = () => {
                       >
                         +
                       </button>
+                      {item.quantity >= item.product.stock && (
+                        <p style={{ color: "red", fontSize: "0.9rem", marginTop: "0.5rem" }}>
+                          Stock no disponible
+                        </p>
+                      )}
                     </td>
                     <td>
                       <button
@@ -248,7 +254,7 @@ const Summary = () => {
             {errors.celular && <p style={{ color: "red" }}>{errors.celular}</p>}
           </div>
 
-          <Button type="submit">Comprar</Button>
+          <Button variant="red" type="submit">Comprar</Button>
         </Form>
       </Section>
 

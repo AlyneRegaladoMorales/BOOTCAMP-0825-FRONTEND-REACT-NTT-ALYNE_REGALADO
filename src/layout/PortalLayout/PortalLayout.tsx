@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from "react";
 import Navbar from "../../components/NavBar/Navbar";
-import { MainContent } from "./PortalLayout.styled";
+import { MainContent } from "../styles/GlobalStyle";
 
 const PortalLayout:FC<PropsWithChildren> = ({ children }) => {
   return (

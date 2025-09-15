@@ -37,37 +37,9 @@ export const InputGroup = styled.div`
     color: #333;
   }
 
-  input {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    transition: 0.3s;
-
-    &:focus {
-      border-color: #e63946;
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
-    }
-  }
 `;
 
-export const SubmitButton = styled.button`
-  width: 100%;
-  padding: 0.9rem;
-  background: #e63946;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
 
-  &:hover {
-    background: #d62828;
-  }
-`;
 
 export const ForgotLink = styled.a`
   display: block;

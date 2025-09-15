@@ -14,8 +14,12 @@ const Modal: FC<ModalProps> = ({ isOpen, message, children, onClose }) => {
   return (
     <Overlay>
       <ModalContainer>
+        <PrimaryButton>
+   
+        <button onClick={onClose}>X</button>  
+        </PrimaryButton>
+
         {message && <p>{message}</p>} {children && <div>{children}</div>}
-        <PrimaryButton onClick={onClose}>Cerrar</PrimaryButton>
 
       </ModalContainer>
     </Overlay>

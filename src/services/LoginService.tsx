@@ -21,7 +21,7 @@ export const loginPost = async (username: string, password: string): Promise<Aut
     const user = loginMapper(data);
     return user;
   } catch (error) {
-    throw new Error("Algo salió mal en el login, inténtelo más tarde...");
+    throw new Error("Algo salió mal, inténtelo más tarde");
   }
 };
 

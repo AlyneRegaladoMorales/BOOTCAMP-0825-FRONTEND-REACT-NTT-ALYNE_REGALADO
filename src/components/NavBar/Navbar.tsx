@@ -7,7 +7,7 @@ import {
   Logo,
   MainNav,
   NavbarContainer,
-  NavLinks, 
+  NavLinks,
   TopBanner,
 } from "./Navbar.styled";
 import cartIcon from "../../assets/icons/cart.svg";
@@ -16,20 +16,21 @@ import cartIcon from "../../assets/icons/cart.svg";
 const Navbar = () => {
   const auth = useAuth();
   const navigate = useNavigate();
-  const { state } = useCart();
+  const { state, dispatch } = useCart();
 
-  const handleSignOut = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+  const handleSignOut = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     auth.signOut();
+    dispatch({ type: "CLEAR_CART" });
+    localStorage.removeItem("cart");
     navigate("/");
   };
+  
 
   const totalItems = state.items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-  <NavbarContainer>
+    <NavbarContainer>
       <TopBanner>
         <p>Bienvenido a DemoStore – Explora todos los productos disponibles</p>
       </TopBanner>
@@ -73,3 +74,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

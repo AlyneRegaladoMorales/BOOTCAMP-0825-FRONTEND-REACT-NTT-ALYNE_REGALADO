@@ -73,39 +73,6 @@ export const TotalBox = styled.div`
 `;
 
 
-export const Input = styled.input`
-  width: 100%;
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  transition: 0.3s;
-  &:focus {
-    border-color: #e63946;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
-  }
-`;
-
-export const Button = styled.button`
-  padding: 1rem;
-  background: #e63946;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: 0.3s;
-
-  &:hover {
-    background: #d62828;
-  }
-
-  &:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-  }
-`;
 export const Select = styled.select`
   width: 100%;
   padding: 0.8rem;

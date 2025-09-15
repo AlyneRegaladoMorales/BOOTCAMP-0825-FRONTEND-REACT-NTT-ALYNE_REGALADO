@@ -1,6 +1,7 @@
 import { useCart } from "../../context/CartContext";
+import { Button } from "../../layout/styles/GlobalStyle";
 import type { Product } from "../../model/Products";
-import { AddButton, Card, Discount, Img, Info, Price, Stars, Title } from "./ProductCard.styled";
+import { Card, Discount, Img, Info, Price, Stars, Title } from "./ProductCard.styled";
 
 interface Props {
   product: Product;
@@ -24,9 +25,9 @@ const ProductCard = ({ product }: Props) => {
         </Price>
         <Stars>{"★".repeat(4)}☆ ({product.rating})
         </Stars>
-        <AddButton onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}>
+        <Button variant="black" onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}>
           Add To Cart
-        </AddButton>
+        </Button>
       </Info>
     </Card>
   );

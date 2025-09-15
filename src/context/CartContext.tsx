@@ -23,10 +23,13 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         (i) => i.product.id === action.payload.id
       );
       if (existing) {
+        if (existing.quantity >= existing.product.stock) {
+          return state; 
+        }
         return {
           ...state,
           items: state.items.map(
-            (i) =>i.product.id === action.payload.id
+            (i) => i.product.id === action.payload.id
               ? { ...i, quantity: i.quantity + 1 }
               : i
           ),
@@ -73,7 +76,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
   }
 };
 
-const CartContext = createContext<{state: CartState;dispatch: React.Dispatch<CartAction>;}>({state: { items: [] },dispatch: () => undefined});
+const CartContext = createContext<{ state: CartState; dispatch: React.Dispatch<CartAction>; }>({ state: { items: [] }, dispatch: () => undefined });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(cartReducer, { items: [] });

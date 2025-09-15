@@ -1,20 +1,5 @@
-export interface Distric {
-    id: string,
-    name: string,
-}
-
-export interface DistricResponse {
-    id: string,
-    name: string,
-}
-export const getDistricMapper = (ds: DistricResponse[]): Distric[] => {
-    return ds.map((d) => ({
-        id: d.id,
-        name: d.name,
-
-    }))
-}
-
+import { getDistricMapper } from "../mappers/districMapper";
+import type { Distric } from "../model/Distric";
 
 export const getDistricService = async (): Promise<Distric[] | undefined> => {
     try {

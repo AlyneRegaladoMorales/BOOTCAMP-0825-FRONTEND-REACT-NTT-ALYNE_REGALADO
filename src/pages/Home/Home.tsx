@@ -19,6 +19,7 @@ import {
 } from "./Home.styled";
 import Pagination from "../../components/Pagination/Pagination";
 import { usePagination } from "../../hook/Pagination";
+import { Input } from "../../layout/styles/GlobalStyle";
 
 const searchProducts = (products: Product[], query: string): Product[] => {
   const queryLower = query.toLowerCase();
@@ -79,7 +80,7 @@ const Home = () => {
 
           <Content>
             <SearchBar>
-              <input
+              <Input
                 type="text"
                 placeholder="Buscar producto (mín. 3 caracteres)"
                 value={searchQuery}
@@ -93,6 +94,7 @@ const Home = () => {
             {filteredProducts.showWarning && (
               <p style={{ color: "red" }}>Mínimo son 3 caracteres</p>
             )}
+            <h1>{cat} Products</h1>
 
             <ProductsGrid>
               {pageItems.map((p) => (
