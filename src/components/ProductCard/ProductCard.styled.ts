@@ -63,9 +63,5 @@ export const Price = styled.div`
   }
 `;
 
-export const Stars = styled.div`
-  color: #f4c150;
-  font-size: 14px;
-  margin-bottom: 10px;
-`;
+
 

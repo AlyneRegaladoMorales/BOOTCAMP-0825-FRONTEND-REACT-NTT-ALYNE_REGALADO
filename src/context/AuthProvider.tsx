@@ -97,7 +97,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
         signOut
       }}
     >
-      {isLoading ? <div> Loading...</div> : children}
+      {isLoading ? <div> Cargando...</div> : children}
     </AuthContext.Provider>
   );
 };

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
-import { Container, Section, Select, Table, Title, TotalBox } from "./Summary.styled";
+import { Container, QuantityBox, Section, Select, Table, Title, TotalBox } from "./Summary.styled";
 import type { Distric } from "../../model/Distric";
 import { getDistricService } from "../../services/DistricService";
-import { Button, Input } from "../../layout/styles/GlobalStyle";
+import { Button, ErrorText, Input } from "../../layout/styles/GlobalStyle";
 
 const Summary = () => {
   const { state, dispatch } = useCart();
@@ -70,9 +70,6 @@ const Summary = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-
-    console.log("Datos enviados:", { ...form, items: state.items, total });
-
     setModalMessage("Pedido registrado con éxito");
     setIsModalOpen(true);
   };
@@ -94,182 +91,197 @@ const Summary = () => {
 
   return (
     <>
-      <PortalLayout> 
+      <PortalLayout>
         <Container>
-           <Section>
-        <Title>Resumen de compra</Title>
-        {state.items.length === 0 ? (
-          <p>No hay productos en el carrito</p>
-        ) : (
-          <>
-            <Table
-              border={1}
-              cellPadding={8}
-              style={{ borderCollapse: "collapse" }}
-            >
-              <thead>
-                <tr>
-                  <th>Imagen</th>
-                  <th>Producto</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {state.items.map((item) => (
-                  <tr key={item.product.id}>
-                    <td>
-                      <img
-                        src={item.product.thumbnail}
-                        alt={item.product.title}
-                        width={60}
-                      />
-                    </td>
-                    <td>{item.product.title}</td>
-                    <td>${item.product.price}</td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          dispatch({
-                            type: "DECREMENT",
-                            payload: item.product.id,
-                          })
-                        }
-                        disabled={item.quantity <= 1}
-                      >
-                        –
-                      </button>
-                      <span style={{ margin: "0 10px" }}>{item.quantity}</span>
-                      <button
-                        onClick={() =>
-                          dispatch({
-                            type: "INCREMENT",
-                            payload: item.product.id,
-                          })
-                        }
-                        disabled={item.quantity >= item.product.stock}
-                      >
-                        +
-                      </button>
-                      {item.quantity >= item.product.stock && (
-                        <p style={{ color: "red", fontSize: "0.9rem", marginTop: "0.5rem" }}>
-                          Stock no disponible
-                        </p>
-                      )}
-                    </td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          dispatch({
-                            type: "REMOVE_ITEM",
-                            payload: item.product.id,
-                          })
-                        }
-                      >
-                        Eliminar
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+          <Section>
+            <Title>Resumen de compra</Title>
+            {state.items.length === 0 ? (
+              <p>No hay productos en el carrito</p>
+            ) : (
+              <>
+                <Table
+                  border={1}
+                  cellPadding={8}
+                >
+                  <thead>
+                    <tr>
+                      <th>Imagen</th>
+                      <th>Producto</th>
+                      <th>Precio</th>
+                      <th>Cantidad</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {state.items.map((item) => (
+                      <tr key={item.product.id}>
+                        <td>
+                          <img
+                            src={item.product.thumbnail}
+                            alt={item.product.title}
+                            width={60}
+                          />
+                        </td>
+                        <td>{item.product.title}</td>
+                        <td>${item.product.price}</td>
+                        <td>
+                          <QuantityBox>
+                            <div>
+                              <button
+                                onClick={() =>
+                                  dispatch({
+                                    type: "DECREMENT",
+                                    payload: item.product.id,
+                                  })
+                                }
+                                disabled={item.quantity <= 1}
+                              >
+                                –
+                              </button>
+                              <span>{item.quantity}</span>
+                              <button
+                                onClick={() =>
+                                  dispatch({
+                                    type: "INCREMENT",
+                                    payload: item.product.id,
+                                  })
+                                }
+                                disabled={item.quantity >= item.product.stock}
+                              >
+                                +
+                              </button>
 
-            <TotalBox>Total: ${total}</TotalBox>
-          </>
-        )}
-      </Section>
-      <Section>
-        <h3>Formulario de compra</h3>
-        <Form onSubmit={handleSubmit}>
-          <div>
-            <label>Nombres:</label>
-            <Input
-              type="text"
-              value={form.nombres}
-              onChange={(e) => setForm({ ...form, nombres: e.target.value })}
-            />
-            {errors.nombres && <p style={{ color: "red" }}>{errors.nombres}</p>}
-          </div>
+                            </div>
 
-          <div>
-            <label>Apellidos:</label>
-            <Input
-              type="text"
-              value={form.apellidos}
-              onChange={(e) => setForm({ ...form, apellidos: e.target.value })}
-            />
-            {errors.apellidos && (
-              <p style={{ color: "red" }}>{errors.apellidos}</p>
+                            {item.quantity >= item.product.stock && (
+                              <ErrorText>
+                                Stock no disponible
+
+
+                              </ErrorText>
+                            )}
+
+                          </QuantityBox>
+
+
+                        </td>
+                        <td>
+                          <button
+                            onClick={() =>
+                              dispatch({
+                                type: "REMOVE_ITEM",
+                                payload: item.product.id,
+                              })
+                            }
+                          >
+                            Eliminar
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+
+                <TotalBox>Total: ${total.toFixed(2)}</TotalBox>
+              </>
             )}
-          </div>
+          </Section>
+          <Section>
+            <h3>Formulario de compra</h3>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label>Nombres:</label>
+                <Input
+                  type="text"
+                  value={form.nombres}
+                  onChange={(e) => setForm({ ...form, nombres: e.target.value })}
+                />
+                {errors.nombres && <ErrorText>{errors.nombres}</ErrorText>}
+              </div>
 
-          <div>
-            <label>Distrito:</label>
-            <Select
-              value={form.distrito}
-              onChange={(e) => setForm({ ...form, distrito: e.target.value })}
-            >
-              <option value="">Seleccione un distrito</option>
-              {distric.map((d) => (
-                <option key={d.id} value={d.name}>
-                  {d.name}
-                </option>
-              ))}
-            </Select>
-            {errors.distrito && <p style={{ color: "red" }}>{errors.distrito}</p>}
-          </div>
+              <div>
+                <label>Apellidos:</label>
+                <Input
+                  type="text"
+                  value={form.apellidos}
+                  onChange={(e) => setForm({ ...form, apellidos: e.target.value })}
+                />
+                {errors.apellidos && (
+                  <ErrorText>{errors.apellidos}</ErrorText>
+                )}
+              </div>
 
-          <div>
-            <label>Dirección:</label>
-            <Input
-              type="text"
-              value={form.direccion}
-              onChange={(e) => setForm({ ...form, direccion: e.target.value })}
-            />
-            {errors.direccion && (
-              <p style={{ color: "red" }}>{errors.direccion}</p>
-            )}
-          </div>
+              <div>
+                <label>Distrito:</label>
+                <Select
+                  value={form.distrito}
+                  onChange={(e) => setForm({ ...form, distrito: e.target.value })}
+                >
+                  <option value="">Seleccione un distrito</option>
+                  {distric.map((d) => (
+                    <option key={d.id} value={d.name}>
+                      {d.name}
+                    </option>
+                  ))}
+                </Select>
+                {errors.distrito && <ErrorText>{errors.distrito}</ErrorText>}
+              </div>
 
-          <div>
-            <label>Referencia:</label>
-            <Input
-              type="text"
-              value={form.referencia}
-              onChange={(e) => setForm({ ...form, referencia: e.target.value })}
-            />
-            {errors.referencia && (
-              <p style={{ color: "red" }}>{errors.referencia}</p>
-            )}
-          </div>
+              <div>
+                <label>Dirección:</label>
+                <Input
+                  type="text"
+                  value={form.direccion}
+                  onChange={(e) => setForm({ ...form, direccion: e.target.value })}
+                />
+                {errors.direccion && (
+                  <ErrorText>{errors.direccion}</ErrorText>
+                )}
+              </div>
 
-          <div>
-            <label>Celular:</label>
-            <Input
-              type="text"
-              value={form.celular}
-              onChange={(e) => setForm({ ...form, celular: e.target.value })}
-            />
-            {errors.celular && <p style={{ color: "red" }}>{errors.celular}</p>}
-          </div>
+              <div>
+                <label>Referencia:</label>
+                <Input
+                  type="text"
+                  value={form.referencia}
+                  onChange={(e) => setForm({ ...form, referencia: e.target.value })}
+                />
+                {errors.referencia && (
+                  <ErrorText>{errors.referencia}</ErrorText>
+                )}
+              </div>
 
-          <Button variant="red" type="submit">Comprar</Button>
-        </Form>
-      </Section>
+              <div>
+                <label>Celular:</label>
+                <Input
+                  type="text"
+                  value={form.celular}
+                  onChange={(e) => setForm({ ...form, celular: e.target.value })}
+                />
+                {errors.celular && <ErrorText>{errors.celular}</ErrorText>}
+              </div>
 
-      <Modal
-        isOpen={isModalOpen}
-        message={modalMessage}
-        onClose={handleCloseModal}
-      />
+              <Button
+                variant="red"
+                type="submit"
+                disabled={state.items.length === 0}
+              >
+                Comprar
+              </Button>            </form>
+          </Section>
+
+          <Modal
+            isOpen={isModalOpen}
+            message={modalMessage}
+            onClose={handleCloseModal}
+          />
 
         </Container>
-       
-        
+
+
       </PortalLayout>
 
-      
+
     </>
   );
 };

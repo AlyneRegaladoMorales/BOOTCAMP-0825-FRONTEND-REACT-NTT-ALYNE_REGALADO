@@ -92,3 +92,20 @@ export const Select = styled.select`
     padding: 0.5rem;
   }
 `;
+export const QuantityBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  span.error {
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+`;
+

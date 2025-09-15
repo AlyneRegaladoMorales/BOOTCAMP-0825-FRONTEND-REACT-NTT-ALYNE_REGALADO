@@ -59,3 +59,11 @@ export const Button = styled.button<ButtonProps>`
   }
 `;
 
+
+export const ErrorText = styled.p`
+  color: ${({ theme }) => theme.colors.primary}; 
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+`;
+
+

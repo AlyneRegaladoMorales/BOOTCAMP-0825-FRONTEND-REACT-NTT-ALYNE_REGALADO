@@ -2,7 +2,7 @@ import type { Auth } from "../model/Auth";
 import { loginMapper } from "../mappers/loginMapper";
 import { API_URL } from "../utils/Constans";
 
-export const loginPost = async (username: string, password: string): Promise<Auth| undefined> => {
+export const loginPost = async (username: string, password: string): Promise<Auth | undefined> => {
   try {
     const response = await fetch(`${API_URL}/auth/login `, {
       method: "POST",
@@ -14,13 +14,17 @@ export const loginPost = async (username: string, password: string): Promise<Aut
         password,
       }),
     });
-    if (!response.ok) {
-      throw new Error(`Error en la petición: ${response.status} ${response.statusText}`);
+    if (response.ok) {
+      const data = await response.json();
+      const user = loginMapper(data);
+      return user;
+    } else if (response.status === 400 || response.status === 401) {
+      throw new Error("Credenciales inválidas");
     }
-    const data = await response.json();
-    const user = loginMapper(data);
-    return user;
   } catch (error) {
+    if (error instanceof Error) {
+      throw error;
+    }
     throw new Error("Algo salió mal, inténtelo más tarde");
   }
 };
