@@ -93,10 +93,10 @@ const Summary = () => {
   };
 
   return (
-    <Container>
-      <PortalLayout children={undefined} />
-
-      <Section>
+    <>
+      <PortalLayout> 
+        <Container>
+           <Section>
         <Title>Resumen de compra</Title>
         {state.items.length === 0 ? (
           <p>No hay productos en el carrito</p>
@@ -263,7 +263,14 @@ const Summary = () => {
         message={modalMessage}
         onClose={handleCloseModal}
       />
-    </Container>
+
+        </Container>
+       
+        
+      </PortalLayout>
+
+      
+    </>
   );
 };
 

@@ -69,8 +69,8 @@ const Home = () => {
 
   return (
     <>
-      <PortalLayout children={undefined} />
-      <PageWrapper>
+      <PortalLayout >
+         <PageWrapper>
         <Container>
           <CategorySidebar
             categories={categories}
@@ -94,7 +94,6 @@ const Home = () => {
             {filteredProducts.showWarning && (
               <p style={{ color: "red" }}>Mínimo son 3 caracteres</p>
             )}
-            <h1>{cat} Products</h1>
 
             <ProductsGrid>
               {pageItems.map((p) => (
@@ -119,6 +118,9 @@ const Home = () => {
           onClose={() => setIsModalOpen(false)}
         />
       </PageWrapper>
+
+      </PortalLayout>
+     
     </>
   );
 };

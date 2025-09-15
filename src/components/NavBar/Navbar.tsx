@@ -3,6 +3,7 @@ import { useAuth } from "../../context/AuthProvider";
 import { useCart } from "../../context/CartContext";
 import {
   Avatar,
+  Burger,
   Icon,
   Logo,
   MainNav,
@@ -11,12 +12,15 @@ import {
   TopBanner,
 } from "./Navbar.styled";
 import cartIcon from "../../assets/icons/cart.svg";
+import { useState } from "react";
 
 
 const Navbar = () => {
   const auth = useAuth();
   const navigate = useNavigate();
   const { state, dispatch } = useCart();
+  const [open, setOpen] = useState(false);
+
 
   const handleSignOut = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
@@ -37,25 +41,30 @@ const Navbar = () => {
 
       <MainNav>
         <Logo>DEMOSTORE</Logo>
+        <Burger onClick={() => setOpen(!open)}>
+          <span />
+          <span />
+          <span />
+        </Burger>
 
-        <NavLinks>
+        <NavLinks  $open={open}>
           <li>
-            <Link to="/home">Lista de productos</Link>
+            <Link to="/home" onClick={() => setOpen(false)}>Lista de productos</Link>
           </li>
 
           <li>
-            <Link to="/summary">
+            <Link to="/summary" onClick={() => setOpen(false)}>
               <Icon src={cartIcon} alt="Carrito" /> ({totalItems})
             </Link>
           </li>
 
           <li>
-            <Link to="/me">
+            <Link to="/me" onClick={() => setOpen(false)}>
               <Avatar
-                src={auth.getUser()?.image || "assets/img/default-avatar.png"}
+                src={auth.getUser()?.image || "src/assets/img/default-avatar.png"}
                 alt={auth.getUser()?.firstName ?? "avatar"}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/default-avatar.png";
+                  (e.target as HTMLImageElement).src = "src/assets/img/default-avatar.png";
                 }}
               />
               Hola, {auth.getUser()?.firstName ?? ""}

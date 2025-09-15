@@ -42,7 +42,7 @@ export const Logo = styled.div`
   font-weight: bold;
 `;
 
-export const NavLinks = styled.ul`
+export const NavLinks = styled.ul<{ $open?: boolean }>`
   ${flexCenter};
   list-style: none;
   gap: 20px;
@@ -59,6 +59,18 @@ export const NavLinks = styled.ul`
       text-decoration: underline;
     }
   }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 17vh;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    background: #fff;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    display: ${({ $open }) => ($open ? "flex" : "none")};
+  }
 `;
 
 export const Avatar = styled.img`
@@ -72,4 +84,22 @@ export const Icon = styled.img`
   width: 24px;
   height: 24px;
   object-fit: contain;
+`;
+
+export const Burger = styled.div`
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `;

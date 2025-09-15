@@ -11,7 +11,11 @@ interface ButtonProps {
 
 export const MainContent = styled.main`
   display: flex;
-  margin-top: 17vh;
+  margin-top: 17vh;  
+  justify-content: center;
+  flex-direction: column;
+    min-height: 75vh;
+
 `;
 export const Input = styled.input`
   width: 100%;
@@ -40,7 +44,7 @@ export const Button = styled.button<ButtonProps>`
   margin-top: 1rem;
   color: ${({ theme }) => theme.colors.white};
   transition: 0.3s;
-  
+
   background: ${({ theme, variant }) =>
     variant === "black" ? theme.colors.black : theme.colors.primary};
 
@@ -54,3 +58,4 @@ export const Button = styled.button<ButtonProps>`
     cursor: not-allowed;
   }
 `;
+

@@ -1,6 +1,7 @@
 import type { FC, PropsWithChildren } from "react";
 import Navbar from "../../components/NavBar/Navbar";
 import { MainContent } from "../styles/GlobalStyle";
+import Footer from "../../components/Footer/footer";
 
 const PortalLayout:FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -9,6 +10,9 @@ const PortalLayout:FC<PropsWithChildren> = ({ children }) => {
         <Navbar />
       </header>
       <MainContent>{children}</MainContent>
+      <Footer/>
+
+
     </>
   );
 };

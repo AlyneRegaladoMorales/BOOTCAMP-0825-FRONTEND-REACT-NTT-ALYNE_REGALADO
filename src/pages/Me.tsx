@@ -37,29 +37,32 @@ const Me = () => {
     }
   };
   if (!auth.isAuthenticated) {
-        return <Navigate to="/" />;
-    }
+    return <Navigate to="/" />;
+  }
 
   return (
-    <div>
-      <PortalLayout children={undefined} />
-      <h1>Profile de {auth.getUser()?.firstName || ""}</h1>
-      {isLoading && <p>Cargando...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {userData && (
-        <div>
-          <p>
-            <strong>Username:</strong> {userData.username}
-          </p>
-          <p>
-            <strong>First Name:</strong> {userData.firstName}
-          </p>
-          <p>
-            <strong>Last Name:</strong> {userData.lastName}
-          </p>
-        </div>
-      )}
-    </div>
+    <>
+      <PortalLayout>
+        <h1>Profile de {auth.getUser()?.firstName || ""}</h1>
+        {isLoading && <p>Cargando...</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {userData && (
+          <div>
+            <p>
+              <strong>Username:</strong> {userData.username}
+            </p>
+            <p>
+              <strong>First Name:</strong> {userData.firstName}
+            </p>
+            <p>
+              <strong>Last Name:</strong> {userData.lastName}
+            </p>
+          </div>
+        )}
+
+      </PortalLayout>
+
+    </>
   );
 };
 
