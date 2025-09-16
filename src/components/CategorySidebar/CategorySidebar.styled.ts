@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { Theme } from "../../utils/Theme";
 
 export const Sidebar = styled.aside`
   width: 220px;
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid ${Theme.gray};
   padding: 16px;
   @media (max-width: 768px) {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid ${Theme.gray};
     padding: 8px 0;
   }
 `;
@@ -18,7 +19,7 @@ export const List = styled.ul<{ $mobile?: boolean }>`
   margin: 0;
   @media (max-width: 768px) {
     display: ${({ $mobile }) => ($mobile ? "block" : "none")};
-    background: #fff;
+    background: ${Theme.white};
     border-radius: 6px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
     margin-top: 8px;
@@ -33,22 +34,21 @@ export const Item = styled.li<{ active: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ active }) => (active ? "#e63946" : "#333")};
+  color: ${({ active }) => (active ? Theme.primary : "#333")};
   font-weight: ${({ active }) => (active ? "600" : "400")};
 
   &:hover {
-    color: #e63946;
+    color:${Theme.primary};
   }
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 8px;
     border-radius: 4px;
 
     &:hover {
-      background: #f5f5f5;
+      background: ${Theme.gray};
     }
   }
 `;
-
 
 export const Arrow = styled.span`
   font-size: 14px;
@@ -62,12 +62,12 @@ export const ToggleButton = styled.button`
     align-items: center;
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #ddd;
+    border: 1px solid ${Theme.gray};
     border-radius: 6px;
     font-size: 16px;
 
     &:hover {
-      background: #eee;
+      background: ${Theme.gray};
     }
   }
 `;

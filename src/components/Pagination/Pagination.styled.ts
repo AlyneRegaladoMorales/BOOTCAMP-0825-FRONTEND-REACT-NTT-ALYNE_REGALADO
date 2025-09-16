@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Theme } from "../../utils/Theme";
 
 export const PaginationContainer = styled.div`
   display: flex;
@@ -6,8 +7,8 @@ export const PaginationContainer = styled.div`
   align-items: center;
   margin: 30px 0;
   gap: 12px;
-   flex-wrap: wrap;
-  
+  flex-wrap: wrap;
+
   span {
     font-weight: 500;
   }
@@ -24,22 +25,22 @@ export const PaginationContainer = styled.div`
 
 export const PageButton = styled.button<{ $active?: boolean }>`
   padding: 6px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid ${Theme.gray};
   border-radius: 4px;
   cursor: pointer;
 
-  background: ${({ $active }) => ($active ? "#e63946" : "#f9f9f9")};
+  background: ${({ $active }) => ($active ? Theme.primary :  Theme.offwhite)};
   color: ${({ $active }) => ($active ? "white" : "#333")};
 
   &:hover {
-    background: ${({ $active }) => ($active ? "#e63946" : "#eee")};
+    background: ${({ $active }) => ($active ? Theme.primary :  Theme.offwhite)};
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
-     @media (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 5px 10px;
     font-size: 14px;
   }

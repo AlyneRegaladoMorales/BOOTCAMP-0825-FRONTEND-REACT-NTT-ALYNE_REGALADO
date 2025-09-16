@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 import type { Auth } from "../../model/Auth";
 import Modal from "../../components/Modal/Modal";
 import { ForgotLink, InputGroup, LoginBox, LoginContainer, Title } from "./Login.styled";
-import { Button, ErrorText, Input } from "../../layout/styles/GlobalStyle";
+import { Button, ErrorText, Input } from "../../utils/GlobalStyle";
 
 const Login = () => {
   const [username, setUsername] = useState<string>("");
@@ -51,7 +51,7 @@ const Login = () => {
       setPassword("");
     }
   };
- 
+
   const handleForgotSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -70,7 +70,7 @@ const Login = () => {
   }
   const handleCloseForgotModal = () => {
     setUsername("");
-      setPassword("");
+    setPassword("");
     setShowForgotModal(false);
     setForgotEmail("");   // limpia input
     setForgotMessage(""); // limpia errores

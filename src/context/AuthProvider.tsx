@@ -3,6 +3,7 @@ import type { User } from "../model/User";
 import { getUserInfo } from "../services/UserService";
 import { requestNewAccessToken } from "../services/LoginService";
 import type { Auth } from "../model/Auth";
+import { LoaderWrapper } from "../utils/GlobalStyle";
 
 
 const AuthContext = createContext({
@@ -15,7 +16,7 @@ const AuthContext = createContext({
 });
 
 export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); //valor de acceso por defecto
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [accessToken, setAccessToken] = useState<string>("");
   const [user, setUser] = useState<User>();
 
@@ -36,7 +37,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     if (!accessToken) {
       token = (await requestNewAccessToken(token)) ?? "";
     }
-    
+
     if (token) {
       const currentUser = await getUserInfo(token);
       if (currentUser) {
@@ -97,7 +98,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
         signOut
       }}
     >
-      {isLoading ? <div> Cargando...</div> : children}
+      {isLoading ? <LoaderWrapper> Cargando...</LoaderWrapper> : children}
     </AuthContext.Provider>
   );
 };

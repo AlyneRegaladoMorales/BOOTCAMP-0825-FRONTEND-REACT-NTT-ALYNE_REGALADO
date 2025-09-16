@@ -1,16 +1,16 @@
 import styled from "styled-components";
+import { Theme } from "../../utils/Theme";
 
 export const Card = styled.div`
   width: 280px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: ${Theme.white};
   display: flex;
   flex-direction: column;
   position: relative;
   transition: transform 0.2s ease;
-
 
   &:hover {
     transform: translateY(-3px);
@@ -21,8 +21,8 @@ export const Discount = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #e63946;
-  color: #fff;
+  background: ${Theme.primary};
+  color: ${Theme.white};
   font-size: 14px;
   padding: 4px 8px;
   border-radius: 6px;
@@ -32,7 +32,7 @@ export const Img = styled.img`
   width: 100%;
   height: 180px;
   object-fit: contain;
-  background: #f7f7f7;
+  background: ${Theme.offwhite};
 `;
 
 export const Info = styled.div`
@@ -58,10 +58,7 @@ export const Price = styled.div`
     margin-left: 8px;
   }
   span.new {
-    color: #e63946;
+    color: ${Theme.primary};
     font-weight: 600;
   }
 `;
-
-
-

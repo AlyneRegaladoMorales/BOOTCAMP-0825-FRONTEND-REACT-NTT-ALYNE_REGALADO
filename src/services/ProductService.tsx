@@ -12,7 +12,7 @@ export const getAllProducts = async (): Promise<Product[] | undefined> => {
     const products = getAllProductsMapper(data.products);
     return products;
   } catch (error) {
-    console.error("Error al cargar los productos", error);
+    throw new Error("Algo salio mal, intentalo mas tarde");
   }
 };
 

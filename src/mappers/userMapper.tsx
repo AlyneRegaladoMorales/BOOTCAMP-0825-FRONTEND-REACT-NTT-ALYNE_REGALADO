@@ -7,5 +7,10 @@ export const getUserInfoMapper = (accessToken: UserResponse): User => {
     lastName: accessToken.lastName,
     username: accessToken.username,
     image: accessToken.image,
+    role: accessToken.role,
+    email: accessToken.email,
+    university: accessToken.university,
+    phone: accessToken.phone
+
   };
 };

@@ -3,7 +3,7 @@ import Login from "../pages/Login/Login";
 import Home from "../pages/Home/Home";
 import Summary from "../pages/Summary/Summary";
 import ProtectedRoute from "./ProtectedRoute";
-import Me from "../pages/Me";
+import Me from "../pages/Me/Me";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <Summary />,
       },
       {
-        path:"/me",
+        path: "/me",
         element: <Me />
       }
     ],

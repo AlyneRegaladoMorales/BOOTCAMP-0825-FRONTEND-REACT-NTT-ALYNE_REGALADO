@@ -1,32 +1,29 @@
 import styled from "styled-components";
-import type { theme } from "./theme";
-type Theme = typeof theme;
+import { Theme } from "./Theme";
 
-declare module "styled-components" {
-  export interface DefaultTheme extends Theme {}
-}
+
+
 interface ButtonProps {
   variant?: "red" | "black";
 }
 
 export const MainContent = styled.main`
   display: flex;
-  margin-top: 17vh;  
+  margin-top: 17vh;
   justify-content: center;
   flex-direction: column;
-    min-height: 75vh;
-
+  min-height: 75vh;
 `;
 export const Input = styled.input`
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid ${({ theme }) => theme.colors.disabled};
+  border: 1px solid ${Theme.disabled};
   border-radius: 8px;
   font-size: 0.95rem;
   transition: 0.3s;
 
   &:focus {
-    border-color: ${({ theme }) => theme.colors.primary};
+    border-color: ${Theme.primary};
     outline: none;
     box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
   }
@@ -42,28 +39,34 @@ export const Button = styled.button<ButtonProps>`
   font-weight: bold;
   cursor: pointer;
   margin-top: 1rem;
-  color: ${({ theme }) => theme.colors.white};
+  color:${Theme.white};
   transition: 0.3s;
 
-  background: ${({ theme, variant }) =>
-    variant === "black" ? theme.colors.black : theme.colors.primary};
+  background: ${({ variant }) =>
+    variant === "black" ? Theme.black : Theme.primary};
 
   &:hover {
-    background: ${({ theme, variant }) =>
-      variant === "black" ? theme.colors.blackHover : theme.colors.primaryHover};
+    background: ${({ variant }) =>
+      variant === "black"
+        ? Theme.blackHover
+        : Theme.primaryHover};
   }
 
   &:disabled {
-    background: ${({ theme }) => theme.colors.disabled};
+    background: ${Theme.disabled};
     cursor: not-allowed;
   }
 `;
 
-
 export const ErrorText = styled.p`
-  color: ${({ theme }) => theme.colors.primary}; 
+  color: ${Theme.primary};
   font-size: 0.9rem;
   margin-top: 0.3rem;
 `;
 
-
+export const LoaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;

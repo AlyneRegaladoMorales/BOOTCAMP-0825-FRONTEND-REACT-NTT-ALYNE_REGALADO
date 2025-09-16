@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Theme } from "../../utils/Theme";
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -14,9 +15,9 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.div`
-  background: #fff;
+  background: ${Theme.white};
   padding: 2rem;
-  border: 1px solid #eee;
+  border: 1px solid ${Theme.gray};
   border-radius: 12px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
 `;
@@ -32,14 +33,15 @@ export const Table = styled.table`
   border-collapse: collapse;
   margin-bottom: 1.5rem;
 
-  th, td {
-    border: 1px solid #eee;
+  th,
+  td {
+    border: 1px solid ${Theme.gray};
     padding: 0.8rem;
     text-align: left;
   }
 
   th {
-    background: #f9f9f9;
+    background: ${Theme.gray};
     font-weight: 600;
   }
 
@@ -72,18 +74,17 @@ export const TotalBox = styled.div`
   text-align: right;
 `;
 
-
 export const Select = styled.select`
   width: 100%;
   padding: 0.8rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid ${Theme.disabled};
+  background: ${Theme.white};
   transition: 0.3s;
   font-size: 1rem;
 
   &:focus {
-    border-color: #e63946;
+    border-color: ${Theme.primary};
     outline: none;
     box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
   }
@@ -100,12 +101,12 @@ export const QuantityBox = styled.div`
   div {
     display: flex;
     align-items: center;
+    gap: 0.6rem;
   }
 
   span.error {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${Theme.primary};
     font-size: 0.9rem;
     margin-top: 0.3rem;
   }
 `;
-

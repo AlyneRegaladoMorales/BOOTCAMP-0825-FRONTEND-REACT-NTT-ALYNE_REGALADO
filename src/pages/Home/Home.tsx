@@ -19,7 +19,7 @@ import {
 } from "./Home.styled";
 import Pagination from "../../components/Pagination/Pagination";
 import { usePagination } from "../../hook/Pagination";
-import { Input } from "../../layout/styles/GlobalStyle";
+import { Input } from "../../utils/GlobalStyle";
 
 const searchProducts = (products: Product[], query: string): Product[] => {
   const queryLower = query.toLowerCase();
@@ -70,57 +70,57 @@ const Home = () => {
   return (
     <>
       <PortalLayout >
-         <PageWrapper>
-        <Container>
-          <CategorySidebar
-            categories={categories}
-            currentCat={cat}
-            onSelect={(slug) => setCat(slug)}
-          />
-
-          <Content>
-            <SearchBar>
-              <Input
-                type="text"
-                placeholder="Buscar producto (mín. 3 caracteres)"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              {searchQuery && (
-                <button onClick={() => setSearchQuery("")}>✕</button>
-              )}
-            </SearchBar>
-
-            {filteredProducts.showWarning && (
-              <p style={{ color: "red" }}>Mínimo son 3 caracteres</p>
-            )}
-
-            <ProductsGrid>
-              {pageItems.map((p) => (
-                <ProductCard key={p.id} product={p} />
-              ))}
-            </ProductsGrid>
-
-            <Pagination
-              page={page}
-              totalPages={totalPages}
-              onPageChange={goToPage}
-              onNext = {nextPage}
-              onPrev = {prevPage}
-
+        <PageWrapper>
+          <Container>
+            <CategorySidebar
+              categories={categories}
+              currentCat={cat}
+              onSelect={(slug) => setCat(slug)}
             />
-          </Content>
-        </Container>
 
-        <Modal
-          isOpen={isModalOpen}
-          message={modalMessage}
-          onClose={() => setIsModalOpen(false)}
-        />
-      </PageWrapper>
+            <Content>
+              <SearchBar>
+                <Input
+                  type="text"
+                  placeholder="Buscar producto (mín. 3 caracteres)"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                {searchQuery && (
+                  <button onClick={() => setSearchQuery("")}>✕</button>
+                )}
+              </SearchBar>
+
+              {filteredProducts.showWarning && (
+                <p style={{ color: "red" }}>Mínimo son 3 caracteres</p>
+              )}
+
+              <ProductsGrid>
+                {pageItems.map((p) => (
+                  <ProductCard key={p.id} product={p} />
+                ))}
+              </ProductsGrid>
+
+              <Pagination
+                page={page}
+                totalPages={totalPages}
+                onPageChange={goToPage}
+                onNext={nextPage}
+                onPrev={prevPage}
+
+              />
+            </Content>
+          </Container>
+
+          <Modal
+            isOpen={isModalOpen}
+            message={modalMessage}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </PageWrapper>
 
       </PortalLayout>
-     
+
     </>
   );
 };

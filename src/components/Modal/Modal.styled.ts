@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { Theme } from "../../utils/Theme";
 
 export const Overlay = styled.div`
   position: fixed;
-top: 0;   
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -14,7 +15,7 @@ top: 0;
 `;
 
 export const ModalContainer = styled.div`
-  background: #fff;
+  background: ${Theme.white};
   padding: 2rem;
   border-radius: 12px;
   width: 25vw;
@@ -35,7 +36,7 @@ export const PrimaryButton = styled.div`
     height: 2rem;
     border: none;
     background: gray;
-    color: #fff;
+    color: ${Theme.white};
     border-radius: 50%;
     font-weight: bold;
   }

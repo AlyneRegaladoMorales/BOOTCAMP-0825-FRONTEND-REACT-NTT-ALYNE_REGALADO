@@ -3,6 +3,7 @@ import { useAuth } from "../../context/AuthProvider";
 import { useCart } from "../../context/CartContext";
 import {
   Avatar,
+  BannerText,
   Burger,
   Icon,
   Logo,
@@ -29,14 +30,16 @@ const Navbar = () => {
     localStorage.removeItem("cart");
     navigate("/");
   };
-  
+
 
   const totalItems = state.items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <NavbarContainer>
       <TopBanner>
-        <p>Bienvenido a DemoStore – Explora todos los productos disponibles</p>
+        <BannerText>
+          <p>Bienvenido a DemoStore – Explora todos los productos disponibles</p>
+        </BannerText>
       </TopBanner>
 
       <MainNav>
@@ -47,7 +50,7 @@ const Navbar = () => {
           <span />
         </Burger>
 
-        <NavLinks  $open={open}>
+        <NavLinks $open={open}>
           <li>
             <Link to="/home" onClick={() => setOpen(false)}>Lista de productos</Link>
           </li>

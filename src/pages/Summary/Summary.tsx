@@ -6,7 +6,7 @@ import PortalLayout from "../../layout/PortalLayout/PortalLayout";
 import { Container, QuantityBox, Section, Select, Table, Title, TotalBox } from "./Summary.styled";
 import type { Distric } from "../../model/Distric";
 import { getDistricService } from "../../services/DistricService";
-import { Button, ErrorText, Input } from "../../layout/styles/GlobalStyle";
+import { Button, ErrorText, Input } from "../../utils/GlobalStyle";
 
 const Summary = () => {
   const { state, dispatch } = useCart();

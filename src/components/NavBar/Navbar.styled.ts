@@ -1,4 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import { Theme } from "../../utils/Theme";
+
+const marquee = keyframes`
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+`;
 
 export const flexCenter = css`
   display: flex;
@@ -7,8 +13,8 @@ export const flexCenter = css`
 
 export const NavbarContainer = styled.nav`
   width: 100%;
-  border-bottom: 1px solid #e5e5e5;
-  background-color: #fff;
+  border-bottom: 1px solid ${Theme.gray};
+  background-color: ${Theme.white};
   position: fixed;
   top: 0;
   left: 0;
@@ -16,21 +22,30 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const TopBanner = styled.div`
-  background: #000;
-  color: #fff;
+  background: ${Theme.black};
+  color: ${Theme.white};
   font-size: 14px;
-  text-align: center;
-  padding: 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
   height: 4vh;
-
-  p {
-    margin: 0;
-    letter-spacing: 0.1em;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
+export const BannerText = styled.p`
+  margin: 0;
+  letter-spacing: 0.1em;
+  display: inline-block;
+
+  @media (max-width: 768px) {
+    padding-left: 100%;
+    animation: ${marquee} 15s linear infinite;
+  }
+`;
 export const MainNav = styled.div`
   ${flexCenter};
+
   justify-content: space-between;
   max-width: 90vw;
   height: 13vh;
@@ -51,7 +66,7 @@ export const NavLinks = styled.ul<{ $open?: boolean }>`
     ${flexCenter};
     gap: 6px;
     text-decoration: none;
-    color: #000;
+    color: ${Theme.black};
     font-size: 16px;
     font-weight: 500;
 
@@ -64,11 +79,11 @@ export const NavLinks = styled.ul<{ $open?: boolean }>`
     position: absolute;
     top: 17vh;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
     width: 100%;
-    background: #fff;
+    background: ${Theme.white};
     padding: 20px 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid ${Theme.gray};
     display: ${({ $open }) => ($open ? "flex" : "none")};
   }
 `;
@@ -95,7 +110,7 @@ export const Burger = styled.div`
   span {
     width: 25px;
     height: 3px;
-    background: #000;
+    background: ${Theme.black};
     border-radius: 2px;
   }
 

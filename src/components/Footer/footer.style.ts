@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { Theme } from "../../utils/Theme";
 
 export const FooterContainer = styled.footer`
   width: 100%;
   padding: 20px;
   background-color: #1a1a1a;
-  color: #fff;
+  color: ${Theme.white};
   text-align: center;
 `;
 
@@ -15,11 +16,11 @@ export const SocialLinks = styled.div`
   margin-bottom: 10px;
 
   a {
-    color: #fff;
+    color:${Theme.white};
     transition: color 0.3s;
 
     &:hover {
-      color: #0077b5; 
+      color: #0077b5;
     }
   }
 

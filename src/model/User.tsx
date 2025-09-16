@@ -5,6 +5,11 @@ export interface UserResponse {
   lastName: string;
   username: string;
   image: string;
+  role: string;
+  email: string;
+  university: string;
+  phone: string;
+
 }
 export interface User {
   _id: string;
@@ -12,5 +17,10 @@ export interface User {
   lastName: string;
   username: string;
   image: string;
+  role: string;
+  email: string;
+  university: string
+  phone: string;
+
 }
 

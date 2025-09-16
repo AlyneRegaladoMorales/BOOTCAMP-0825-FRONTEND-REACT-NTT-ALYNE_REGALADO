@@ -2,7 +2,7 @@ import { ToastBox } from "./ToastBox.style";
 
 interface ToastProps {
   message: string;
-  type?: "success" | "error" | "info" | "warning";
+  type?: "success" | "error" ;
 }
 
 const Toast = ({ message, type = "success" }: ToastProps) => {

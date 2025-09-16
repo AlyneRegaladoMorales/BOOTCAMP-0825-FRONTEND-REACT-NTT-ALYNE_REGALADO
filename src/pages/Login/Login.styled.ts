@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { Theme } from "../../utils/Theme";
 
 export const LoginContainer = styled.div`
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f9f9f9; 
+  background: ${Theme.gray};
 `;
 
 export const LoginBox = styled.div`
-  background: #fff;
+  background: ${Theme.white};
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -20,7 +21,7 @@ export const LoginBox = styled.div`
 
 export const Title = styled.h1`
   margin-bottom: 1.5rem;
-  color: #111;
+  color: ${Theme.black};
   font-size: 1.8rem;
 `;
 
@@ -36,16 +37,13 @@ export const InputGroup = styled.div`
     font-size: 0.9rem;
     color: #333;
   }
-
 `;
-
-
 
 export const ForgotLink = styled.a`
   display: block;
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #e63946;
+  color: ${Theme.primary};
   cursor: pointer;
   text-decoration: none;
 

@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../context/AuthProvider";
-import type { User } from "../model/User";
-import { getUserInfo } from "../services/UserService";
-import PortalLayout from "../layout/PortalLayout/PortalLayout";
+
 import { Navigate } from "react-router-dom";
+import { ProfileContainer, Avatar, InfoSection, Badge } from "./Me.styled";
+import { getUserInfo } from "../../services/UserService";
+import { useAuth } from "../../context/AuthProvider";
+import type { User } from "../../model/User";
+import PortalLayout from "../../layout/PortalLayout/PortalLayout";
+import { ErrorText, LoaderWrapper } from "../../utils/GlobalStyle";
 
 const Me = () => {
   const auth = useAuth();
   const [userData, setUserData] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -20,7 +22,6 @@ const Me = () => {
     try {
       const accessToken = auth.getAccessToken();
       const user = await getUserInfo(accessToken);
-
       if (user) {
         setUserData(user);
       } else {
@@ -36,33 +37,45 @@ const Me = () => {
       setIsLoading(false);
     }
   };
+
   if (!auth.isAuthenticated) {
     return <Navigate to="/" />;
   }
 
   return (
-    <>
-      <PortalLayout>
-        <h1>Profile de {auth.getUser()?.firstName || ""}</h1>
-        {isLoading && <p>Cargando...</p>}
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {userData && (
-          <div>
+    <PortalLayout>
+      {isLoading && <LoaderWrapper>Cargando...</LoaderWrapper>}
+      {error && <ErrorText>{error}</ErrorText>}
+
+      {userData && (
+        <ProfileContainer>
+          <Avatar src={userData.image} alt={userData.firstName} />
+
+          <InfoSection>
+            <h2>
+              {userData.firstName} {userData.lastName}
+
+            </h2>
+            <p>
+              <strong>Role:</strong> <Badge>{userData.role}</Badge>
+            </p>
             <p>
               <strong>Username:</strong> {userData.username}
             </p>
             <p>
-              <strong>First Name:</strong> {userData.firstName}
+              <strong>Email:</strong> {userData.email}
             </p>
             <p>
-              <strong>Last Name:</strong> {userData.lastName}
+              <strong>Phone:</strong> {userData.phone}
             </p>
-          </div>
-        )}
 
-      </PortalLayout>
-
-    </>
+            <p>
+              <strong>University:</strong> {userData.university}
+            </p>
+          </InfoSection>
+        </ProfileContainer>
+      )}
+    </PortalLayout>
   );
 };
 
