@@ -8,22 +8,30 @@ Incluye autenticación, gestión de carrito de compras y visualización de produ
 ## Instalación y ejecución
 
 1. **Clonar el repositorio**
-
-git clone https://github.com/AlyneRegaladoMorales/BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO.
+   ```bash
+   git clone https://github.com/AlyneRegaladoMorales/BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO.git
+   ```
 
 2. **Instalar dependencias**
-npm install
+   ```bash
+   npm install
+   ```
 
 3. **Cambiar a la rama de desarrollo**
-git checkout feature/proyecto-integrador
+   ```bash
+   git checkout feature/proyecto-integrador
+   ```
 
-3. **Ejecutar en modo desarrollo**
-npm run dev
+4. **Ejecutar en modo desarrollo**
+   ```bash
+   npm run dev
+   ```
 
 ---
 
 ## Organización de carpetas
 
+```
 ├── public/              # Recursos estáticos
 ├── src/
 │   ├── assets/          # Imágenes e íconos
@@ -38,4 +46,4 @@ npm run dev
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
-
+```
