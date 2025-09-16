@@ -9,7 +9,8 @@ interface Props {
 }
 
 const Pagination = ({ page, totalPages, onPageChange, onNext, onPrev }: Props) => {
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const FIRST_PAGE = 1
+  const pages = Array.from({ length: totalPages }, (_, i) => i + FIRST_PAGE);
   return (
     <PaginationContainer>
       <PageButton

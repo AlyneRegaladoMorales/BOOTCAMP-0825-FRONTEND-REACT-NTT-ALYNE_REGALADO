@@ -5,15 +5,25 @@ interface StarsProps {
 }
 
 const Stars = ({ rating }: StarsProps) => {
+
+  const MAX_STARS = 5;
+  const NO_HALF_STAR = 0;
+  const DECIMAL_BASE = 1;   
+  const HALF_STAR_VALUE = 1;
+  const HALF_STAR_THRESHOLD = 0.5; 
+
+  const FULL_STAR = "★";
+  const HALF_STAR = "☆"; 
+
   const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  const hasHalfStar = rating %  DECIMAL_BASE >= HALF_STAR_THRESHOLD;
+  const emptyStars = MAX_STARS - fullStars - (hasHalfStar ? HALF_STAR_VALUE : NO_HALF_STAR);
 
   return (
     <StarsContent>
-      {"★".repeat(fullStars)}
-      {hasHalfStar && "☆"}
-      {"☆".repeat(emptyStars)} ({rating})
+      {FULL_STAR.repeat(fullStars)}
+      {hasHalfStar && HALF_STAR}
+      {HALF_STAR.repeat(emptyStars)} ({rating})
     </StarsContent>
   );
 };

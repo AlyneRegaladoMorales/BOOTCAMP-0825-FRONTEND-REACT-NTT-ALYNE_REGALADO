@@ -51,18 +51,19 @@ export const Table = styled.table`
 
   img {
     border-radius: 8px;
+    width: 60;
   }
 
   button {
     background: transparent;
-    border: 1px solid #ccc;
+    border: 1px solid ${Theme.disabled};
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     cursor: pointer;
     transition: 0.2s;
 
     &:hover {
-      background: #f1f1f1;
+      background:  ${Theme.offwhite};
     }
   }
 `;

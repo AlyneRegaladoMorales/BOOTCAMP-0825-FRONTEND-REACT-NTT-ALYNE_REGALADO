@@ -1,3 +1,4 @@
+import { AppActions } from "../model/CartActions";
 import type { Product } from "../model/Products";
 
 interface CartItem {
@@ -9,18 +10,25 @@ export interface CartState {
 }
 
 export type CartAction =
-  | { type: "ADD_ITEM"; payload: Product }
-  | { type: "REMOVE_ITEM"; payload: number }
-  | { type: "INCREMENT"; payload: number }
-  | { type: "DECREMENT"; payload: number }
-  | { type: "CLEAR_CART" };
+  | { type: AppActions.AddItem; payload: Product }
+  | { type: AppActions.RemoveItem; payload: number }
+  | { type: AppActions.Increment; payload: number }
+  | { type: AppActions.Decrement; payload: number }
+  | { type: AppActions.Clear };
 
 export const cartReducer = (
   state: CartState,
   action: CartAction
 ): CartState => {
+
+  const INCREMENT_STEP = 1;
+  const DECREMENT_STEP = 1;
+  const DEFAULT_ITEM_QUANTITY = 1;
+  const MIN_CART_QUANTITY = 0;
+  
+
   switch (action.type) {
-    case "ADD_ITEM": {
+    case AppActions.AddItem: {
       const existing = state.items.find(
         (i) => i.product.id === action.payload.id
       );
@@ -32,45 +40,45 @@ export const cartReducer = (
           ...state,
           items: state.items.map((i) =>
             i.product.id === action.payload.id
-              ? { ...i, quantity: i.quantity + 1 }
+              ? { ...i, quantity: i.quantity + INCREMENT_STEP }
               : i
           ),
         };
       }
       return {
         ...state,
-        items: [...state.items, { product: action.payload, quantity: 1 }],
+        items: [...state.items, { product: action.payload, quantity: DEFAULT_ITEM_QUANTITY }],
       };
     }
-    case "REMOVE_ITEM": {
+    case AppActions.RemoveItem: {
       return {
         ...state,
         items: state.items.filter((i) => i.product.id !== action.payload),
       };
     }
-    case "INCREMENT": {
+    case AppActions.Increment: {
       return {
         ...state,
         items: state.items.map((i) =>
           i.product.id === action.payload
-            ? { ...i, quantity: i.quantity + 1 }
+            ? { ...i, quantity: i.quantity + INCREMENT_STEP }
             : i
         ),
       };
     }
-    case "DECREMENT": {
+    case AppActions.Decrement: {
       return {
         ...state,
         items: state.items
           .map((i) =>
             i.product.id === action.payload
-              ? { ...i, quantity: i.quantity - 1 }
+              ? { ...i, quantity: i.quantity - DECREMENT_STEP }
               : i
           )
-          .filter((i) => i.quantity > 0),
+          .filter((i) => i.quantity > MIN_CART_QUANTITY),
       };
     }
-    case "CLEAR_CART": {
+    case AppActions.Clear: {
       return { items: [] };
     }
     default:

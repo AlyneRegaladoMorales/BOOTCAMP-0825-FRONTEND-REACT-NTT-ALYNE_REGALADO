@@ -25,7 +25,7 @@ const CategorySidebar = ({ categories, currentCat, onSelect }: Props) => {
           }}
 
         >
-          All Products
+          Todos los productos
         </Item>
         {categories.map((c) => (
           <Item

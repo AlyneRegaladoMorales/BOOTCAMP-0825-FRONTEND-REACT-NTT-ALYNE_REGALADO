@@ -8,4 +8,6 @@ export enum Theme {
   gray = "#dddddd",
   success= "#4caf50",
   offwhite = "#f5f5f5",
+  darkgray="#333333",
+  yellow = "#f4c150",
 }

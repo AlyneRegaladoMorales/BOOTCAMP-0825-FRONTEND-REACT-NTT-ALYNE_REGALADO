@@ -4,7 +4,7 @@ import { Theme } from "../../utils/Theme";
 export const FooterContainer = styled.footer`
   width: 100%;
   padding: 20px;
-  background-color: #1a1a1a;
+  background-color: ${Theme.black};
   color: ${Theme.white};
   text-align: center;
 `;
@@ -19,9 +19,6 @@ export const SocialLinks = styled.div`
     color:${Theme.white};
     transition: color 0.3s;
 
-    &:hover {
-      color: #0077b5;
-    }
   }
 
   @media (max-width: 600px) {

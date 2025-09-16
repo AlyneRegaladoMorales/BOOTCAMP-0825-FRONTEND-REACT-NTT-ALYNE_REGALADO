@@ -35,7 +35,7 @@ export const InputGroup = styled.div`
     margin-bottom: 0.3rem;
     font-weight: 500;
     font-size: 0.9rem;
-    color: #333;
+    color: ${Theme.darkgray};
   }
 `;
 

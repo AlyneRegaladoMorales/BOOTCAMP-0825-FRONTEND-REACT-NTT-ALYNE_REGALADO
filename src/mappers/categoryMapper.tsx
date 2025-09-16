@@ -1,9 +1,9 @@
 import type { Category, CategoryResponse } from "../model/Category";
 
-export const getCategoriesMapper = (category: CategoryResponse[]): Category[] => {
-  return category.map((c) => ({
-    slug: c.slug,
-    name: c.name,
-    url: c.url,
+export const getCategoriesMapper = (categories: CategoryResponse[]): Category[] => {
+  return categories.map((category) => ({
+    slug: category.slug,
+    name: category.name,
+    url: category.url,
   }));
 };

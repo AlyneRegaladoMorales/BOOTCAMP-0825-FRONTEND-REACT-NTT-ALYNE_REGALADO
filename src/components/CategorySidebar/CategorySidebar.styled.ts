@@ -34,7 +34,7 @@ export const Item = styled.li<{ active: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ active }) => (active ? Theme.primary : "#333")};
+  color: ${({ active }) => (active ? Theme.primary : Theme.darkgray)};
   font-weight: ${({ active }) => (active ? "600" : "400")};
 
   &:hover {

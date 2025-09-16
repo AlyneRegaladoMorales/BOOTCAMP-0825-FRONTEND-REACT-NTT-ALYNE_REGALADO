@@ -14,6 +14,8 @@ import {
 } from "./Navbar.styled";
 import cartIcon from "../../assets/icons/cart.svg";
 import { useState } from "react";
+import { AppActions } from "../../model/CartActions";
+import { IMAGES } from "../../utils/Images";
 
 
 const Navbar = () => {
@@ -26,7 +28,7 @@ const Navbar = () => {
   const handleSignOut = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     auth.signOut();
-    dispatch({ type: "CLEAR_CART" });
+    dispatch({ type: AppActions.Clear });
     localStorage.removeItem("cart");
     navigate("/");
   };
@@ -64,10 +66,10 @@ const Navbar = () => {
           <li>
             <Link to="/me" onClick={() => setOpen(false)}>
               <Avatar
-                src={auth.getUser()?.image || "src/assets/img/default-avatar.png"}
+                src={auth.getUser()?.image || IMAGES.DEFAULT_AVATAR}
                 alt={auth.getUser()?.firstName ?? "avatar"}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "src/assets/img/default-avatar.png";
+                  (e.target as HTMLImageElement).src = IMAGES.DEFAULT_AVATAR;
                 }}
               />
               Hola, {auth.getUser()?.firstName ?? ""}

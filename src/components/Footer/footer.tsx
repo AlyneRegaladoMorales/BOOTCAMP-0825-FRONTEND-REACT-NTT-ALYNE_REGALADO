@@ -1,3 +1,4 @@
+import { IMAGES } from "../../utils/Images";
 import { FooterContainer, SocialLinks } from "./footer.style";
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
                     target="_blank"
                     rel="_linlkedin"
                 >
-                    <img src="src/assets/img/_linlkedin.png" alt="img_linlkedin" />
+                    <img src={IMAGES.LINKEDIN} alt="img_linlkedin" />
 
                 </a>
                 <a
@@ -17,14 +18,14 @@ const Footer = () => {
                     target="_blank"
                     rel="_github"
                 >
-                    <img src="src/assets/img/_github.png" alt="img_github" />
+                    <img src={IMAGES.GITHUB} alt="img_github" />
                 </a>
                 <a
                     href="https://instagram.com"
                     target="_blank"
                     rel="_instagram"
                 >
-                    <img src="src/assets/img/_instagram.png" alt="img_instagram" />
+                    <img src={IMAGES.INSTAGRAM} alt="img_instagram" />
 
 
                 </a>

@@ -30,7 +30,7 @@ export const PageButton = styled.button<{ $active?: boolean }>`
   cursor: pointer;
 
   background: ${({ $active }) => ($active ? Theme.primary :  Theme.offwhite)};
-  color: ${({ $active }) => ($active ? "white" : "#333")};
+  color: ${({ $active }) => ($active ? Theme.white : Theme.darkgray)};
 
   &:hover {
     background: ${({ $active }) => ($active ? Theme.primary :  Theme.offwhite)};

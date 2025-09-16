@@ -57,20 +57,20 @@ const Me = () => {
 
             </h2>
             <p>
-              <strong>Role:</strong> <Badge>{userData.role}</Badge>
+              <strong>Rol:</strong> <Badge>{userData.role}</Badge>
             </p>
             <p>
-              <strong>Username:</strong> {userData.username}
+              <strong>Usuario:</strong> {userData.username}
             </p>
             <p>
-              <strong>Email:</strong> {userData.email}
+              <strong>Correo:</strong> {userData.email}
             </p>
             <p>
-              <strong>Phone:</strong> {userData.phone}
+              <strong>Telefono:</strong> {userData.phone}
             </p>
 
             <p>
-              <strong>University:</strong> {userData.university}
+              <strong>Universidad:</strong> {userData.university}
             </p>
           </InfoSection>
         </ProfileContainer>

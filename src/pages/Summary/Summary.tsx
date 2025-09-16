@@ -3,20 +3,35 @@ import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
-import { Container, QuantityBox, Section, Select, Table, Title, TotalBox } from "./Summary.styled";
+import {
+  Container,
+  QuantityBox,
+  Section,
+  Select,
+  Table,
+  Title,
+  TotalBox,
+} from "./Summary.styled";
 import type { Distric } from "../../model/Distric";
 import { getDistricService } from "../../services/DistricService";
 import { Button, ErrorText, Input } from "../../utils/GlobalStyle";
+import { AppActions } from "../../model/CartActions";
 
 const Summary = () => {
   const { state, dispatch } = useCart();
   const navigate = useNavigate();
   const [distric, setDistric] = useState<Distric[]>([]);
 
+  const INITIAL_TOTAL = 0;
+  const EMPTY_CART = 0;
+  const MIN_ITEM_QUANTITY = 1;
+  const PHONE_LENGTH = 9;
+  const PRICE_DECIMALS = 2;
+
   useEffect(() => {
     getDistricService().then((districs) => {
-      if (districs) setDistric(districs)
-    })
+      if (districs) setDistric(districs);
+    });
   }, []);
 
   const [form, setForm] = useState({
@@ -35,7 +50,7 @@ const Summary = () => {
 
   const total = state.items.reduce(
     (acc, item) => acc + item.product.price * item.quantity,
-    0
+    INITIAL_TOTAL
   );
 
   const validate = () => {
@@ -59,12 +74,12 @@ const Summary = () => {
 
     if (!form.celular.trim()) {
       newErrors.celular = "Campo obligatorio";
-    } else if (!/^\d{9}$/.test(form.celular)) {
+    } else if (!new RegExp(`^\\d{${PHONE_LENGTH}}$`).test(form.celular)) {
       newErrors.celular = "Debe ingresar un número válido";
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return Object.keys(newErrors).length === EMPTY_CART;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -76,7 +91,7 @@ const Summary = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    dispatch({ type: "CLEAR_CART" });
+    dispatch({ type: AppActions.Clear });
     setForm({
       nombres: "",
       apellidos: "",
@@ -99,17 +114,14 @@ const Summary = () => {
               <p>No hay productos en el carrito</p>
             ) : (
               <>
-                <Table
-                  border={1}
-                  cellPadding={8}
-                >
+                <Table>
                   <thead>
                     <tr>
                       <th>Imagen</th>
                       <th>Producto</th>
                       <th>Precio</th>
                       <th>Cantidad</th>
-                      <th>Acciones</th>
+                      <th>Eliminar</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -130,11 +142,11 @@ const Summary = () => {
                               <button
                                 onClick={() =>
                                   dispatch({
-                                    type: "DECREMENT",
+                                    type: AppActions.Decrement,
                                     payload: item.product.id,
                                   })
                                 }
-                                disabled={item.quantity <= 1}
+                                disabled={item.quantity <= MIN_ITEM_QUANTITY}
                               >
                                 –
                               </button>
@@ -142,7 +154,7 @@ const Summary = () => {
                               <button
                                 onClick={() =>
                                   dispatch({
-                                    type: "INCREMENT",
+                                    type: AppActions.Increment,
                                     payload: item.product.id,
                                   })
                                 }
@@ -150,26 +162,18 @@ const Summary = () => {
                               >
                                 +
                               </button>
-
                             </div>
 
                             {item.quantity >= item.product.stock && (
-                              <ErrorText>
-                                Stock no disponible
-
-
-                              </ErrorText>
+                              <ErrorText>Stock no disponible</ErrorText>
                             )}
-
                           </QuantityBox>
-
-
                         </td>
                         <td>
                           <button
                             onClick={() =>
                               dispatch({
-                                type: "REMOVE_ITEM",
+                                type: AppActions.RemoveItem,
                                 payload: item.product.id,
                               })
                             }
@@ -182,7 +186,7 @@ const Summary = () => {
                   </tbody>
                 </Table>
 
-                <TotalBox>Total: ${total.toFixed(2)}</TotalBox>
+                <TotalBox>Total: ${total.toFixed(PRICE_DECIMALS)}</TotalBox>
               </>
             )}
           </Section>
@@ -194,28 +198,30 @@ const Summary = () => {
                 <Input
                   type="text"
                   value={form.nombres}
-                  onChange={(e) => setForm({ ...form, nombres: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, nombres: e.target.value })
+                  }
                 />
                 {errors.nombres && <ErrorText>{errors.nombres}</ErrorText>}
               </div>
-
               <div>
                 <label>Apellidos:</label>
                 <Input
                   type="text"
                   value={form.apellidos}
-                  onChange={(e) => setForm({ ...form, apellidos: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, apellidos: e.target.value })
+                  }
                 />
-                {errors.apellidos && (
-                  <ErrorText>{errors.apellidos}</ErrorText>
-                )}
+                {errors.apellidos && <ErrorText>{errors.apellidos}</ErrorText>}
               </div>
-
               <div>
                 <label>Distrito:</label>
                 <Select
                   value={form.distrito}
-                  onChange={(e) => setForm({ ...form, distrito: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, distrito: e.target.value })
+                  }
                 >
                   <option value="">Seleccione un distrito</option>
                   {distric.map((d) => (
@@ -226,48 +232,49 @@ const Summary = () => {
                 </Select>
                 {errors.distrito && <ErrorText>{errors.distrito}</ErrorText>}
               </div>
-
               <div>
                 <label>Dirección:</label>
                 <Input
                   type="text"
                   value={form.direccion}
-                  onChange={(e) => setForm({ ...form, direccion: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, direccion: e.target.value })
+                  }
                 />
-                {errors.direccion && (
-                  <ErrorText>{errors.direccion}</ErrorText>
-                )}
+                {errors.direccion && <ErrorText>{errors.direccion}</ErrorText>}
               </div>
-
               <div>
                 <label>Referencia:</label>
                 <Input
                   type="text"
                   value={form.referencia}
-                  onChange={(e) => setForm({ ...form, referencia: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, referencia: e.target.value })
+                  }
                 />
                 {errors.referencia && (
                   <ErrorText>{errors.referencia}</ErrorText>
                 )}
               </div>
-
               <div>
                 <label>Celular:</label>
                 <Input
                   type="text"
                   value={form.celular}
-                  onChange={(e) => setForm({ ...form, celular: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, celular: e.target.value })
+                  }
                 />
                 {errors.celular && <ErrorText>{errors.celular}</ErrorText>}
               </div>
-
               <Button
                 variant="red"
                 type="submit"
-                disabled={state.items.length === 0}
+                disabled={state.items.length === EMPTY_CART}
               >
                 Comprar
-              </Button>            </form>
+              </Button>{" "}
+            </form>
           </Section>
 
           <Modal
@@ -275,13 +282,8 @@ const Summary = () => {
             message={modalMessage}
             onClose={handleCloseModal}
           />
-
         </Container>
-
-
       </PortalLayout>
-
-
     </>
   );
 };
