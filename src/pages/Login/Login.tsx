@@ -6,6 +6,7 @@ import type { Auth } from "../../model/Auth";
 import Modal from "../../components/Modal/Modal";
 import { ForgotLink, InputGroup, LoginBox, LoginContainer, Title } from "./Login.styled";
 import { Button, ErrorText, Input } from "../../utils/GlobalStyle";
+import { AppPaths } from "../../utils/AppPaths";
 
 const Login = () => {
   const [username, setUsername] = useState<string>("");
@@ -36,7 +37,7 @@ const Login = () => {
       );
       if (userData) {
         auth.saveUser(userData);
-        <Navigate to="/home" />;
+        <Navigate to={AppPaths.HOME} />;
       } else {
         setErrorResponse("Usuario o contraseña incorrectos");
       }
@@ -66,7 +67,7 @@ const Login = () => {
   };
 
   if (auth.isAuthenticated) {
-    return <Navigate to="/home" />;
+    return <Navigate to={AppPaths.HOME} />;
   }
   const handleCloseForgotModal = () => {
     setUsername("");

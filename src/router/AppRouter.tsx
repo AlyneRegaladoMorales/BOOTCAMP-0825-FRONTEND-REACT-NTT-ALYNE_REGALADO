@@ -4,26 +4,28 @@ import Home from "../pages/Home/Home";
 import Summary from "../pages/Summary/Summary";
 import ProtectedRoute from "./ProtectedRoute";
 import Me from "../pages/Me/Me";
+import { AppPaths } from "../utils/AppPaths";
+
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: AppPaths.ROOT,
     element: <Login />,
   },
   {
-    path: "/",
+    path: AppPaths.ROOT,
     element: <ProtectedRoute />,
     children: [
       {
-        path: "/home",
+        path: AppPaths.HOME,
         element: <Home />,
       },
       {
-        path: "/summary",
+        path: AppPaths.SUMMARY,
         element: <Summary />,
       },
       {
-        path: "/me",
+        path: AppPaths.PROFILE,
         element: <Me />
       }
     ],

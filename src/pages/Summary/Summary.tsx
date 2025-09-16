@@ -16,6 +16,7 @@ import type { Distric } from "../../model/Distric";
 import { getDistricService } from "../../services/DistricService";
 import { Button, ErrorText, Input } from "../../utils/GlobalStyle";
 import { AppActions } from "../../model/CartActions";
+import { AppPaths } from "../../utils/AppPaths";
 
 const Summary = () => {
   const { state, dispatch } = useCart();
@@ -101,7 +102,7 @@ const Summary = () => {
       celular: "",
     });
 
-    navigate("/home");
+    navigate(AppPaths.HOME);
   };
 
   return (

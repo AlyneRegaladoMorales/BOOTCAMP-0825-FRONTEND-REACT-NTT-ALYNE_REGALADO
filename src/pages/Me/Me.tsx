@@ -7,6 +7,7 @@ import { useAuth } from "../../context/AuthProvider";
 import type { User } from "../../model/User";
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
 import { Badge, ErrorText, InfoSection, LoaderWrapper } from "../../utils/GlobalStyle";
+import { AppPaths } from "../../utils/AppPaths";
 
 const Me = () => {
   const auth = useAuth();
@@ -39,7 +40,7 @@ const Me = () => {
   };
 
   if (!auth.isAuthenticated) {
-    return <Navigate to="/" />;
+    return <Navigate to={AppPaths.ROOT} />;
   }
 
   return (
