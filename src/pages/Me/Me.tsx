@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 import { Navigate } from "react-router-dom";
-import { ProfileContainer, Avatar, InfoSection, Badge } from "./Me.styled";
+import { ProfileContainer, Avatar} from "./Me.styled";
 import { getUserInfo } from "../../services/UserService";
 import { useAuth } from "../../context/AuthProvider";
 import type { User } from "../../model/User";
 import PortalLayout from "../../layout/PortalLayout/PortalLayout";
-import { ErrorText, LoaderWrapper } from "../../utils/GlobalStyle";
+import { Badge, ErrorText, InfoSection, LoaderWrapper } from "../../utils/GlobalStyle";
 
 const Me = () => {
   const auth = useAuth();

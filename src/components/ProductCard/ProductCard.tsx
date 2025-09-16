@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
-import { Button } from "../../utils/GlobalStyle";
+import { Badge, Button, InfoSection } from "../../utils/GlobalStyle";
 import type { Product } from "../../model/Products";
-import { Card, Discount, Img, Info, Price, Title } from "./ProductCard.styled";
+import { Card, Discount, Img, Price } from "./ProductCard.styled";
 import Toast from "../Toast/Toast";
 import Stars from "../Stars/stars";
 
@@ -37,8 +37,11 @@ const ProductCard = ({ product }: Props) => {
           <Discount>-{Math.round(product.discountPercentage)}%</Discount>
         )}
         <Img src={product.thumbnail} alt={product.title} />
-        <Info>
-          <Title>{product.title}</Title>
+        <InfoSection>
+          <h3>{product.title}</h3>
+          <p>Categoria: <Badge>{product.category}</Badge> </p>
+          
+
           <Price>
             <span className="new">${product.price}</span>
           </Price>
@@ -49,7 +52,7 @@ const ProductCard = ({ product }: Props) => {
           </Button>
           {toast && <Toast message={toast.message} type={toast.type} />}
 
-        </Info>
+        </InfoSection>
       </Card>
 
 

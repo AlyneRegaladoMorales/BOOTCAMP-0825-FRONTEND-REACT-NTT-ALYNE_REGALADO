@@ -35,19 +35,7 @@ export const Img = styled.img`
   background: ${Theme.offwhite};
 `;
 
-export const Info = styled.div`
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`;
 
-export const Title = styled.h3`
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 6px 0;
-  min-height: 40px;
-`;
 
 export const Price = styled.div`
   font-size: 16px;

@@ -1,6 +1,6 @@
 export enum Theme {
   primary = "#e63946",
-  primaryHover = "#d62828",
+  primaryHover = "#ff6b6b",
   black = "#000000",
   blackHover = "#222222",
   disabled = "#cccccc",
