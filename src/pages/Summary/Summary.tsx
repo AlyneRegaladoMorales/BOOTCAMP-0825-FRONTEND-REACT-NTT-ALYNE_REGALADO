@@ -17,6 +17,7 @@ import { getDistricService } from "../../services/DistricService";
 import { Button, ErrorText, Input } from "../../utils/GlobalStyle";
 import { AppActions } from "../../model/CartActions";
 import { AppPaths } from "../../utils/AppPaths";
+import { WHITESPACE_REGEX } from "../../utils/Validators";
 
 const Summary = () => {
   const { state, dispatch } = useCart();
@@ -59,13 +60,13 @@ const Summary = () => {
 
     if (!form.nombres.trim()) {
       newErrors.nombres = "Campo obligatorio";
-    } else if (/\d/.test(form.nombres)) {
+    } else if (WHITESPACE_REGEX.test(form.nombres)) {
       newErrors.nombres = "Debe ingresar un valor válido";
     }
 
     if (!form.apellidos.trim()) {
       newErrors.apellidos = "Campo obligatorio";
-    } else if (/\d/.test(form.apellidos)) {
+    } else if (WHITESPACE_REGEX.test(form.apellidos)) {
       newErrors.apellidos = "Debe ingresar un valor válido";
     }
 

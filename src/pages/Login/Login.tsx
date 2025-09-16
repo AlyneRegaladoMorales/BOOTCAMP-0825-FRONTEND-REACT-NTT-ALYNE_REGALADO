@@ -7,6 +7,7 @@ import Modal from "../../components/Modal/Modal";
 import { ForgotLink, InputGroup, LoginBox, LoginContainer, Title } from "./Login.styled";
 import { Button, ErrorText, Input } from "../../utils/GlobalStyle";
 import { AppPaths } from "../../utils/AppPaths";
+import { EMAIL_REGEX, WHITESPACE_REGEX } from "../../utils/Validators";
 
 const Login = () => {
   const [username, setUsername] = useState<string>("");
@@ -26,7 +27,7 @@ const Login = () => {
       setErrorResponse("Usuario y contraseña son obligatorios");
       return;
     }
-    if (/\s/.test(username) || /\s/.test(password)) {
+    if (WHITESPACE_REGEX.test(username) || WHITESPACE_REGEX.test(password)) {
       setErrorResponse("Usuario y contraseña no deben contener espacios");
       return;
     }
@@ -55,8 +56,7 @@ const Login = () => {
 
   const handleForgotSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(forgotEmail)) {
+    if (!EMAIL_REGEX.test(forgotEmail)) {
       setForgotMessage("Ingrese un correo válido");
       return;
     }
@@ -73,8 +73,8 @@ const Login = () => {
     setUsername("");
     setPassword("");
     setShowForgotModal(false);
-    setForgotEmail("");   // limpia input
-    setForgotMessage(""); // limpia errores
+    setForgotEmail("");   
+    setForgotMessage(""); 
   };
 
   return (

@@ -1,4 +1,5 @@
 import { IMAGES } from "../../utils/Images";
+import { LINKS } from "../../utils/Links";
 import { FooterContainer, SocialLinks } from "./footer.style";
 
 const Footer = () => {
@@ -6,7 +7,7 @@ const Footer = () => {
         <FooterContainer>
             <SocialLinks>
                 <a
-                    href="https://www.linkedin.com/in/alyne-regalado/"
+                    href={LINKS.LINKEDIN}
                     target="_blank"
                     rel="_linlkedin"
                 >
@@ -14,14 +15,14 @@ const Footer = () => {
 
                 </a>
                 <a
-                    href="https://github.com/AlyneRegaladoMorales"
+                    href={LINKS.GITHUB}
                     target="_blank"
                     rel="_github"
                 >
                     <img src={IMAGES.GITHUB} alt="img_github" />
                 </a>
                 <a
-                    href="https://instagram.com"
+                    href={LINKS.INSTAGRAM}
                     target="_blank"
                     rel="_instagram"
                 >
