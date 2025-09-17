@@ -35,8 +35,12 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
+  const MIN_SEARCH_LENGTH = 3;
+  const PRODUCTS_PER_PAGE = 10;
+
   const filteredProducts = useMemo(() => {
-    if (searchQuery.trim().length < 3) {
+
+    if (searchQuery.trim().length < MIN_SEARCH_LENGTH) {
       return { list: products, showWarning: searchQuery.length > 0 };
     }
     return { list: searchProducts(products, searchQuery), showWarning: false };
@@ -44,7 +48,7 @@ const Home = () => {
 
   const { page, totalPages, pageItems, nextPage, prevPage, goToPage } = usePagination(
     filteredProducts.list,
-    10
+    PRODUCTS_PER_PAGE
   );
 
   useEffect(() => {
