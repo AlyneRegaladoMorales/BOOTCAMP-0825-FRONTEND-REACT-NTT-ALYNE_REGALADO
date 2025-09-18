@@ -1,6 +1,5 @@
 export interface UserResponse {
-  id: string;
-  _id: string;
+  id: number;
   firstName: string;
   lastName: string;
   username: string;
@@ -12,7 +11,7 @@ export interface UserResponse {
 
 }
 export interface User {
-  _id: string;
+  id: number;
   firstName: string;
   lastName: string;
   username: string;

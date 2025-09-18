@@ -2,7 +2,7 @@ import type { User, UserResponse } from "../model/User";
 
 export const getUserInfoMapper = (accessToken: UserResponse): User => {
   return {
-    _id: accessToken.id,
+    id: accessToken.id,
     firstName: accessToken.firstName,
     lastName: accessToken.lastName,
     username: accessToken.username,
