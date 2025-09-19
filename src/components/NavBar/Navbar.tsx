@@ -12,7 +12,6 @@ import {
   NavLinks,
   TopBanner,
 } from "./Navbar.styled";
-import cartIcon from "../../assets/icons/cart.svg";
 import { useState } from "react";
 import { AppActions } from "../../model/CartActions";
 import { IMAGES } from "../../utils/Images";
@@ -60,7 +59,7 @@ const Navbar = () => {
 
           <li>
             <Link to={AppPaths.SUMMARY} onClick={() => setOpen(false)}>
-              <Icon src={cartIcon} alt="Carrito" /> ({totalItems})
+              <Icon src={IMAGES.CART_ICON} alt="Carrito" /> ({totalItems})
             </Link>
           </li>
 

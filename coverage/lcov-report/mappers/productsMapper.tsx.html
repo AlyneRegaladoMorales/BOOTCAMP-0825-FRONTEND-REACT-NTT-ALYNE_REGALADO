@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for mappers/userMapper.tsx</title>
+    <title>Code coverage report for mappers/productsMapper.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">mappers</a> userMapper.tsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">mappers</a> productsMapper.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -39,7 +39,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -78,11 +78,10 @@
 <a name='L13'></a><a href='#L13'>13</a>
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
-<a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L16'></a><a href='#L16'>16</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -94,22 +93,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { User, UserResponse } from "../model/User";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { Product, ProductResponse } from "../model/Products";
 &nbsp;
-export const getUserInfoMapper = (accessToken: UserResponse): User =&gt; {
-  return {
-    id: accessToken.id,
-    firstName: accessToken.firstName,
-    lastName: accessToken.lastName,
-    username: accessToken.username,
-    image: accessToken.image,
-    role: accessToken.role,
-    email: accessToken.email,
-    university: accessToken.university,
-    phone: accessToken.phone
-&nbsp;
-  };
+export const getAllProductsMapper = (products: ProductResponse[]): Product[] =&gt; {
+  return products.map((product) =&gt; ({
+    id: product.id,
+    title: product.title,
+    description: product.description,
+    price: product.price,
+    discountPercentage: product.discountPercentage,
+    rating: product.rating,
+    thumbnail: product.thumbnail,
+    category: product.category,
+    stock: product.stock
+  }));
 };
 &nbsp;</pre></td></tr></table></pre>
 

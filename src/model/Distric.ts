@@ -1,10 +1,10 @@
 export interface Distric {
-    id: string,
+    id: number,
     name: string,
 }
 
 export interface DistricResponse {
-    id: string,
+    id: number,
     name: string,
 }
 

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for services/mocks/userMock.ts</title>
+    <title>Code coverage report for services/mocks/productMock.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">services/mocks</a> userMock.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">services/mocks</a> productMock.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -76,7 +76,28 @@
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -89,18 +110,60 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { UserResponse } from "../../model/User";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { ProductResponse } from "../../model/Products";
 &nbsp;
-export const UserMock: UserResponse = {
-  id: 1,
-  firstName: "Emily",
-  lastName: "Johnson",
-  email: "emily.johnson@x.dummyjson.com",
-  phone: "+81 965-431-3024",
-  username: "emilys",
-  image: "https://dummyjson.com/icon/emilys/128",
-  university: "University of Wisconsin--Madison",
-  role: "admin",
+export const ProductMock: { products: ProductResponse[] } = {
+  products: [
+    {
+        id: 1,
+        title: "Perfume Oil",
+        description: "Mega Discount, Impression of A...",
+        price: 13,
+        discountPercentage: 8.4,
+        rating: 4.26,
+        stock: 65,
+        brand: "Impression of Acqua Di Gio",
+        category: "fragrances",
+        thumbnail: "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+        tags: [],
+        sku: ""
+    },
+    {
+        id: 2,
+        title: "Brown Perfume",
+        description: "Royal Mirage Sport Brown Perfume...",
+        price: 40,
+        discountPercentage: 15.66,
+        rating: 4,
+        stock: 52,
+        brand: "Royal Mirage",
+        category: "fragrances",
+        thumbnail: "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
+        tags: [],
+        sku: ""
+    },
+  ],
 };
 &nbsp;</pre></td></tr></table></pre>
 
