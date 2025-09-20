@@ -9,12 +9,14 @@ interface Props {
 }
 const CategorySidebar = ({ categories, currentCat, onSelect }: Props) => {
   const [open, setOpen] = useState(false);
+  const TOGGLE_OPEN_ICON = "▲";
+const TOGGLE_CLOSED_ICON = "▼";
 
   return (
     <Sidebar>
       <ToggleButton onClick={() => setOpen(!open)}>
         Categorías
-        <span>{open ? "▲" : "▼"}</span>
+        <span>{open ? TOGGLE_OPEN_ICON : TOGGLE_CLOSED_ICON}</span>
       </ToggleButton>
       <List $mobile={open}>
         <Item

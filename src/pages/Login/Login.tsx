@@ -73,25 +73,25 @@ const Login = () => {
     setUsername("");
     setPassword("");
     setShowForgotModal(false);
-    setForgotEmail("");   
-    setForgotMessage(""); 
+    setForgotEmail("");
+    setForgotMessage("");
   };
 
   return (
     <LoginContainer>
       <LoginBox>
         <form onSubmit={handleSubmit}>
-          <Title>Iniciar Sesion</Title>
+          <Title>Iniciar Sesión</Title>
           <InputGroup>
-            <label>Usuario:</label>
-            <Input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label htmlFor="username">Usuario:</label>
+            <Input id="username" type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
           </InputGroup>
           <InputGroup>
-            <label>Contraseña:</label>
-            <Input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <label htmlFor="password">Contraseña:</label>
+            <Input id="password" type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
           </InputGroup>
-          <Button variant="red" type="submit">iniciar sesion</Button >
+          <Button variant="red" type="submit">Iniciar sesión</Button >
         </form>
 
         <ForgotLink href="#" onClick={() => setShowForgotModal(true)}>
@@ -104,7 +104,7 @@ const Login = () => {
 
       <Modal isOpen={showForgotModal} onClose={handleCloseForgotModal}>
         <form onSubmit={handleForgotSubmit}>
-          <Input type="email" placeholder="Correo electrónico" value={forgotEmail} onChange={(e) => setForgotEmail(e.target.value)} />
+          <Input id="forgotEmail" type="email" placeholder="Correo electrónico" value={forgotEmail} onChange={(e) => setForgotEmail(e.target.value)} />
           {forgotMessage && <ErrorText>{forgotMessage}</ErrorText>}
           <Button variant="black" type="submit">Enviar</Button>
         </form>

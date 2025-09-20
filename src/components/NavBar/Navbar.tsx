@@ -40,7 +40,7 @@ const Navbar = () => {
     <NavbarContainer>
       <TopBanner>
         <BannerText>
-          <p>Bienvenido a DemoStore – Explora todos los productos disponibles</p>
+          Bienvenido a DemoStore – Explora todos los productos disponibles
         </BannerText>
       </TopBanner>
 

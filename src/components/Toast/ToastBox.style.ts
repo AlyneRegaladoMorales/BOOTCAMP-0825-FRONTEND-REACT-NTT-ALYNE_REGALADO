@@ -27,7 +27,6 @@ export const ToastBox = styled.div<{ type: "success" | "error" }>`
   type === "error" && `background: ${Theme.primary}`}
 
 `;
-
 export interface Props {
   message: string;
   type?: "success" | "error" | "info" | "warning";

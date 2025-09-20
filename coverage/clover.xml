@@ -1,31 +1,378 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1758261255239" clover="3.2.0">
-  <project timestamp="1758261255240" name="All files">
-    <metrics statements="135" coveredstatements="134" conditionals="26" coveredconditionals="25" methods="24" coveredmethods="24" elements="185" coveredelements="183" complexity="0" loc="135" ncloc="135" packages="6" files="24" classes="24"/>
+<coverage generated="1758335603923" clover="3.2.0">
+  <project timestamp="1758335603924" name="All files">
+    <metrics statements="529" coveredstatements="513" conditionals="168" coveredconditionals="142" methods="123" coveredmethods="103" elements="820" coveredelements="758" complexity="0" loc="529" ncloc="529" packages="20" files="58" classes="58"/>
+    <package name="components.CategorySidebar">
+      <metrics statements="22" coveredstatements="19" conditionals="8" coveredconditionals="6" methods="8" coveredmethods="6"/>
+      <file name="CategorySidebar.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\CategorySidebar\CategorySidebar.styled.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="18" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="37" count="282" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="282" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+      </file>
+      <file name="CategorySidebar.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\CategorySidebar\CategorySidebar.tsx">
+        <metrics statements="12" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="31" count="264" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Footer">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="footer.style.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Footer\footer.style.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+      <file name="footer.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Footer\footer.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Modal">
+      <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="Modal.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Modal\Modal.styled.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+      </file>
+      <file name="Modal.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Modal\Modal.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="183" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="24" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.NavBar">
+      <metrics statements="40" coveredstatements="39" conditionals="24" coveredconditionals="20" methods="9" coveredmethods="8"/>
+      <file name="Navbar.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\NavBar\Navbar.styled.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="87" count="24" type="cond" truecount="1" falsecount="1"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="98" count="2" type="stmt"/>
+        <line num="104" count="2" type="stmt"/>
+      </file>
+      <file name="Navbar.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\NavBar\Navbar.tsx">
+        <metrics statements="26" coveredstatements="25" conditionals="22" coveredconditionals="19" methods="8" coveredmethods="7"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="24" type="stmt"/>
+        <line num="23" count="24" type="stmt"/>
+        <line num="24" count="24" type="stmt"/>
+        <line num="25" count="24" type="stmt"/>
+        <line num="28" count="24" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="24" type="stmt"/>
+        <line num="39" count="24" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="90" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Pagination">
+      <metrics statements="15" coveredstatements="14" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="6"/>
+      <file name="Pagination.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Pagination\Pagination.styled.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="32" count="46" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="46" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="46" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="Pagination.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Pagination\Pagination.tsx">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="18" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ProductCard">
+      <metrics statements="29" coveredstatements="29" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="3"/>
+      <file name="ProductCard.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\ProductCard\ProductCard.styled.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+      </file>
+      <file name="ProductCard.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\ProductCard\ProductCard.tsx">
+        <metrics statements="23" coveredstatements="23" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="49" type="stmt"/>
+        <line num="16" count="49" type="stmt"/>
+        <line num="18" count="49" type="stmt"/>
+        <line num="19" count="49" type="stmt"/>
+        <line num="20" count="49" type="stmt"/>
+        <line num="22" count="49" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="37" count="49" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+      </file>
+    </package>
     <package name="components.Stars">
       <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <file name="stars.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Stars\stars.styled.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
       </file>
       <file name="stars.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Stars\stars.tsx">
         <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="53" type="stmt"/>
+        <line num="10" count="53" type="stmt"/>
+        <line num="11" count="53" type="stmt"/>
+        <line num="12" count="53" type="stmt"/>
+        <line num="13" count="53" type="stmt"/>
+        <line num="15" count="53" type="stmt"/>
+        <line num="16" count="53" type="stmt"/>
+        <line num="18" count="53" type="stmt"/>
+        <line num="19" count="53" type="stmt"/>
+        <line num="20" count="53" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="53" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Toast">
+      <metrics statements="10" coveredstatements="10" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="Toast.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Toast\Toast.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="ToastBox.style.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\components\Toast\ToastBox.style.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="24" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="3" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="context">
+      <metrics statements="84" coveredstatements="77" conditionals="40" coveredconditionals="30" methods="27" coveredmethods="19"/>
+      <file name="AuthProvider.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\context\AuthProvider.tsx">
+        <metrics statements="53" coveredstatements="49" conditionals="24" coveredconditionals="17" methods="17" coveredmethods="11"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="54" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="17" type="stmt"/>
+        <line num="20" count="17" type="stmt"/>
+        <line num="21" count="17" type="stmt"/>
+        <line num="23" count="17" type="stmt"/>
+        <line num="25" count="17" type="stmt"/>
+        <line num="26" count="7" type="stmt"/>
+        <line num="29" count="17" type="stmt"/>
+        <line num="30" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="32" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="41" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="51" count="17" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="55" count="17" type="stmt"/>
+        <line num="56" count="9" type="stmt"/>
+        <line num="57" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="61" count="7" type="stmt"/>
+        <line num="64" count="17" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="68" count="17" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="75" count="17" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="78" count="3" type="stmt"/>
+        <line num="79" count="3" type="stmt"/>
+        <line num="82" count="17" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="90" count="17" type="stmt"/>
+        <line num="106" count="26" type="stmt"/>
+      </file>
+      <file name="CartContext.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\context\CartContext.tsx">
+        <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="20" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="19" count="58" type="stmt"/>
+      </file>
+      <file name="cartReducer.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\context\cartReducer.ts">
+        <metrics statements="23" coveredstatements="23" conditionals="16" coveredconditionals="13" methods="7" coveredmethods="7"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="24" count="9" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
+        <line num="26" count="9" type="stmt"/>
+        <line num="27" count="9" type="stmt"/>
+        <line num="30" count="9" type="cond" truecount="6" falsecount="0"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="35" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="63" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="74" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="context.mocks">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="AuthMock.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\context\mocks\AuthMock.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="CartItemMock.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\context\mocks\CartItemMock.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="UserMock.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\context\mocks\UserMock.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="hook">
+      <metrics statements="17" coveredstatements="16" conditionals="5" coveredconditionals="0" methods="8" coveredmethods="3"/>
+      <file name="Pagination.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\hook\Pagination.tsx">
+        <metrics statements="17" coveredstatements="16" conditionals="5" coveredconditionals="0" methods="8" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="5" count="23" type="stmt"/>
+        <line num="7" count="23" type="stmt"/>
+        <line num="8" count="23" type="stmt"/>
+        <line num="10" count="23" type="stmt"/>
+        <line num="12" count="23" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="14" count="15" type="stmt"/>
+        <line num="15" count="15" type="stmt"/>
+        <line num="18" count="23" type="stmt"/>
+        <line num="19" count="23" type="stmt"/>
+        <line num="20" count="23" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="24" count="23" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="28" count="23" type="stmt"/>
+      </file>
+    </package>
+    <package name="layout.PortalLayout">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="PortalLayout.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\layout\PortalLayout\PortalLayout.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
       </file>
     </package>
     <package name="mappers">
@@ -42,7 +389,7 @@
       </file>
       <file name="loginMapper.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\mappers\loginMapper.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
       </file>
       <file name="productsMapper.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\mappers\productsMapper.tsx">
@@ -52,8 +399,161 @@
       </file>
       <file name="userMapper.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\mappers\userMapper.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.Home">
+      <metrics statements="53" coveredstatements="52" conditionals="14" coveredconditionals="13" methods="14" coveredmethods="13"/>
+      <file name="Home.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\pages\Home\Home.styled.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+      </file>
+      <file name="Home.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\pages\Home\Home.tsx">
+        <metrics statements="46" coveredstatements="45" conditionals="14" coveredconditionals="13" methods="14" coveredmethods="13"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="10" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="23" type="stmt"/>
+        <line num="31" count="23" type="stmt"/>
+        <line num="32" count="23" type="stmt"/>
+        <line num="33" count="23" type="stmt"/>
+        <line num="35" count="23" type="stmt"/>
+        <line num="36" count="23" type="stmt"/>
+        <line num="38" count="23" type="stmt"/>
+        <line num="39" count="23" type="stmt"/>
+        <line num="41" count="23" type="stmt"/>
+        <line num="43" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="13" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="49" count="23" type="stmt"/>
+        <line num="54" count="23" type="stmt"/>
+        <line num="55" count="7" type="stmt"/>
+        <line num="56" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="60" count="23" type="stmt"/>
+        <line num="61" count="9" type="stmt"/>
+        <line num="62" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="7" type="stmt"/>
+        <line num="64" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="67" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="71" count="9" type="stmt"/>
+        <line num="74" count="23" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="91" count="3" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="104" count="57" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="132" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.Home.moks">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="mockCategories.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\pages\Home\moks\mockCategories.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="mockCategoryProducts.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\pages\Home\moks\mockCategoryProducts.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="mockProducts.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\pages\Home\moks\mockProducts.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.Login">
+      <metrics statements="67" coveredstatements="66" conditionals="18" coveredconditionals="16" methods="11" coveredmethods="11"/>
+      <file name="Login.styled.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\pages\Login\Login.styled.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+      </file>
+      <file name="Login.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\pages\Login\Login.tsx">
+        <metrics statements="60" coveredstatements="59" conditionals="18" coveredconditionals="16" methods="11" coveredmethods="11"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="56" type="stmt"/>
+        <line num="14" count="56" type="stmt"/>
+        <line num="15" count="56" type="stmt"/>
+        <line num="17" count="56" type="stmt"/>
+        <line num="18" count="56" type="stmt"/>
+        <line num="19" count="56" type="stmt"/>
+        <line num="20" count="56" type="stmt"/>
+        <line num="22" count="56" type="stmt"/>
+        <line num="24" count="56" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
+        <line num="26" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="30" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="39" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="52" count="4" type="stmt"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="57" count="56" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
+        <line num="59" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="69" count="56" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="72" count="55" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="80" count="55" type="stmt"/>
+        <line num="87" count="6" type="stmt"/>
+        <line num="91" count="6" type="stmt"/>
+        <line num="97" count="4" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="107" count="10" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="122" count="2" type="stmt"/>
       </file>
     </package>
     <package name="services">
@@ -87,8 +587,8 @@
       </file>
       <file name="LoginService.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\services\LoginService.tsx">
         <metrics statements="22" coveredstatements="21" conditionals="10" coveredconditionals="9" methods="4" coveredmethods="4"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
@@ -135,8 +635,8 @@
       </file>
       <file name="UserService.tsx" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\services\UserService.tsx">
         <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
@@ -206,25 +706,63 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="36" coveredstatements="36" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
+      <file name="AppPaths.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\AppPaths.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+      </file>
       <file name="Constans.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\Constans.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
       </file>
-      <file name="Theme.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\Theme.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="GlobalStyle.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\GlobalStyle.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="46" count="119" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="119" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="67" count="5" type="stmt"/>
+        <line num="74" count="5" type="stmt"/>
+        <line num="89" count="5" type="stmt"/>
+      </file>
+      <file name="Images.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\Images.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+      <file name="Links.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\Links.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
+      </file>
+      <file name="Theme.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\Theme.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+      </file>
+      <file name="Validators.ts" path="C:\Users\alynr\Documents\Proyectos\NTTDATA\ProyectoFinal\BOOTCAMP-0825-FRONTEND-REACT-NTT-ALYNE_REGALADO\src\utils\Validators.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
       </file>
     </package>
   </project>

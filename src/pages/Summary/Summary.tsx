@@ -196,8 +196,9 @@ const Summary = () => {
             <h3>Formulario de compra</h3>
             <form onSubmit={handleSubmit}>
               <div>
-                <label>Nombres:</label>
+                <label htmlFor="nombres">Nombres:</label>
                 <Input
+                  id="nombres"
                   type="text"
                   value={form.nombres}
                   onChange={(e) =>
@@ -207,8 +208,9 @@ const Summary = () => {
                 {errors.nombres && <ErrorText>{errors.nombres}</ErrorText>}
               </div>
               <div>
-                <label>Apellidos:</label>
+                <label htmlFor="apellidos">Apellidos:</label>
                 <Input
+                  id="apellidos"
                   type="text"
                   value={form.apellidos}
                   onChange={(e) =>
@@ -218,8 +220,9 @@ const Summary = () => {
                 {errors.apellidos && <ErrorText>{errors.apellidos}</ErrorText>}
               </div>
               <div>
-                <label>Distrito:</label>
+                <label htmlFor="distrito">Distrito:</label>
                 <Select
+                  id="distrito"
                   value={form.distrito}
                   onChange={(e) =>
                     setForm({ ...form, distrito: e.target.value })
@@ -235,8 +238,9 @@ const Summary = () => {
                 {errors.distrito && <ErrorText>{errors.distrito}</ErrorText>}
               </div>
               <div>
-                <label>Dirección:</label>
+                <label htmlFor="direccion">Dirección:</label>
                 <Input
+                  id="direccion"
                   type="text"
                   value={form.direccion}
                   onChange={(e) =>
@@ -246,8 +250,9 @@ const Summary = () => {
                 {errors.direccion && <ErrorText>{errors.direccion}</ErrorText>}
               </div>
               <div>
-                <label>Referencia:</label>
+                <label htmlFor="referencia">Referencia:</label>
                 <Input
+                  id="referencia"
                   type="text"
                   value={form.referencia}
                   onChange={(e) =>
@@ -259,8 +264,9 @@ const Summary = () => {
                 )}
               </div>
               <div>
-                <label>Celular:</label>
+                <label htmlFor="celular">Celular:</label>
                 <Input
+                  id="celular"
                   type="text"
                   value={form.celular}
                   onChange={(e) =>

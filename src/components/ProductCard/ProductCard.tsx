@@ -32,8 +32,6 @@ const ProductCard = ({ product }: Props) => {
     setTimeout(() => setToast(null), TOAST_DURATION_SUCCESS);
   };
 
-
-
   return (
     <>
       <Card>
@@ -58,9 +56,6 @@ const ProductCard = ({ product }: Props) => {
 
         </InfoSection>
       </Card>
-
-
-
     </>
 
   );
