@@ -84,11 +84,11 @@ const Login = () => {
           <Title>Iniciar Sesion</Title>
           <InputGroup>
             <label>Usuario:</label>
-            <Input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <Input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="emilys"/>
           </InputGroup>
           <InputGroup>
             <label>Contraseña:</label>
-            <Input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="emilyspass"/>
 
           </InputGroup>
           <Button variant="red" type="submit">iniciar sesion</Button >
