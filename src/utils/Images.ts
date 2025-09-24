@@ -1,7 +1,13 @@
+import cartIcon from "../assets/icons/cart.svg";
+import defaultAvatar from "../assets/img/default-avatar.svg";
+import githubIcon from "../assets/img/_github.svg";
+import instagramIcon from "../assets/img/_instagram.svg";
+import linkedinIcon from "../assets/img/_linlkedin.svg";
+
 export const IMAGES = {
-  DEFAULT_AVATAR: "src/assets/img/default-avatar.svg",
-  CART_ICON: "src/assets/icons/cart.svg",
-  GITHUB: "src/assets/img/_github.svg",
-  INSTAGRAM: "src/assets/img/_instagram.svg",
-  LINKEDIN: "src/assets/img/_linlkedin.svg",
+  DEFAULT_AVATAR: defaultAvatar,
+  CART_ICON: cartIcon,
+  GITHUB: githubIcon,
+  INSTAGRAM: instagramIcon,
+  LINKEDIN: linkedinIcon,
 };
