@@ -1,7 +1,7 @@
 export const IMAGES = {
-  DEFAULT_AVATAR: "public/img/default-avatar.png",
-  CART_ICON: "public/icons/cart.svg",
-  GITHUB: "public/img/_github.png",
-  INSTAGRAM: "public/img/_instagram.png",
-  LINKEDIN: "public/img/_linlkedin.png",
+  DEFAULT_AVATAR: "src/assets/img/default-avatar.svg",
+  CART_ICON: "src/assets/icons/cart.svg",
+  GITHUB: "src/assets/img/_github.svg",
+  INSTAGRAM: "src/assets/img/_instagram.svg",
+  LINKEDIN: "src/assets/img/_linlkedin.svg",
 };
