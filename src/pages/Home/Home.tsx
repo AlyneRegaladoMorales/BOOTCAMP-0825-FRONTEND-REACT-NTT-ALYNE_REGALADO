@@ -33,7 +33,7 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalMessage, setModalMessage] = useState("");
+  const [modalMessage, _setModalMessage] = useState("");
 
   const MIN_SEARCH_LENGTH = 3;
   const PRODUCTS_PER_PAGE = 10;
