@@ -11,7 +11,7 @@ const AuthContext = createContext({
   getAccessToken: (): string => "",
   getRefreshToken: (): string | null => null,
   getUser: () => ({} as User | undefined),
-  saveUser: (userData: Auth) => { },
+  saveUser: (_userData: Auth) => { },
   signOut: () => { },
 });
 
